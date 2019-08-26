@@ -10,10 +10,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_26_135900) do
+ActiveRecord::Schema.define(version: 2019_08_26_153206) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "achievements", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "badge_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["badge_id"], name: "index_achievements_on_badge_id"
+    t.index ["user_id"], name: "index_achievements_on_user_id"
+  end
+
+  create_table "badges", force: :cascade do |t|
+    t.string "title"
+    t.string "icon"
+    t.integer "milestone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "challenges", force: :cascade do |t|
+    t.string "name"
+    t.integer "duration"
+    t.date "start_date"
+    t.date "end_date"
+    t.text "description"
+    t.string "image"
+    t.integer "reward"
+    t.string "address"
+    t.integer "coordinates", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_challenges_on_user_id"
+  end
+
+  create_table "trackers", force: :cascade do |t|
+    t.bigint "challenge_id"
+    t.bigint "user_id"
+    t.boolean "completed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["challenge_id"], name: "index_trackers_on_challenge_id"
+    t.index ["user_id"], name: "index_trackers_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +66,18 @@ ActiveRecord::Schema.define(version: 2019_08_26_135900) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.integer "score", default: 0, null: false
+    t.text "bio"
+    t.string "avatar"
+    t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "achievements", "badges"
+  add_foreign_key "achievements", "users"
+  add_foreign_key "challenges", "users"
+  add_foreign_key "trackers", "challenges"
+  add_foreign_key "trackers", "users"
 end
