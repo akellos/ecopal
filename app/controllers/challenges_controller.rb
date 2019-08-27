@@ -9,11 +9,14 @@ class ChallengesController < ApplicationController
   end
 
   def new
+    @user = current_user
     @challenge = Challenge.new
   end
 
   def create
     @challenge = Challenge.new(challenge_params)
+    @user = current_user
+    @challenge.user = @user
     if @challenge.save
       redirect_to challenge_path
     else
