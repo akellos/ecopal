@@ -1,9 +1,12 @@
-<h2>Sign up</h2>
 
+<div class="form-container-signup">
+  <div class="form-image-signup" style="background-image: url(<%= image_path "sky.jpg" %>)">
+  </div>
+  <div class="form-signup">
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="form-inputs-signup">
      <%= f.input :name,
                 required: true,
                 autofocus: true,
@@ -29,4 +32,8 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+
+
+  </div>
+
+</div>
