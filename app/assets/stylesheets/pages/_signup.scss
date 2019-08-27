@@ -1,11 +1,13 @@
 .form-container-signup {
   width: 920px;
-  height: 540px;
+  height: 450px;
   background-color: #fff;
-  margin: 40px auto;
+  margin: 80px auto;
   display: flex;
   justify-content: space-between;
   box-shadow: $box-shadow;
+  position: relative;
+  z-index: 1;
 }
 
 .form-image-signup {
@@ -22,4 +24,19 @@
 
 .form-inputs-signup {
   width: 400px;
+}
+
+.main-container--signup {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.form-wrapper {
+    height: 100%;
+    width: 100%;
+    opacity: 0.2;
+    position: absolute;
+    filter: blur(4px);
 }

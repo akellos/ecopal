@@ -1,19 +1,27 @@
 .form-container {
   width: 800px;
   height: 450px;
-  margin: 40px auto;
+  margin: 90px auto;
   display: flex;
   justify-content: space-between;
   box-shadow: $box-shadow;
+  position: relative;
+  z-index: 1;
 }
 
 .form-image {
   width: 400px;
+  position: relative;
+  z-index: 1;
 }
 
 .form {
   padding: 12px;
   display: flex;
   align-items: center;
-  margin: 0 auto;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  width: 400px;
+  background-color: #fff;
 }
