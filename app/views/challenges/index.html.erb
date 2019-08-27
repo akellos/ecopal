@@ -1,0 +1,5 @@
+<h1>List of Challenges</h1>
+
+<% @challenges.each do |challenge| %>
+  <p>Challenge title: <%= link_to challenge.name, challenge_path(challenge) %></p>
+  <% end %>
