@@ -1,0 +1,25 @@
+.form-container-signup {
+  width: 920px;
+  height: 540px;
+  background-color: #fff;
+  margin: 40px auto;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: $box-shadow;
+}
+
+.form-image-signup {
+  width: 414px;
+}
+
+.form-signup {
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  margin: 0 40px;
+  width: 506px;
+}
+
+.form-inputs-signup {
+  width: 400px;
+}
