@@ -1,0 +1,36 @@
+body {
+  /* DO NOT CHANGE */
+  margin: 0;
+}
+
+.site {
+  /* DO NOT CHANGE */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-container {
+  /* DO NOT CHANGE */
+  flex: 1;
+}
+
+.navbar {
+  background-color: grey;
+  color: white;
+  padding: 16px 0;
+
+
+  /*
+  ADD THE FOLLOWING FOR A STICKY NAVBAR
+
+  position: fixed;
+  width: 100vw;
+  */
+}
+
+.footer {
+  background-color: grey;
+  color: white;
+  padding: 16px 0;
+}
