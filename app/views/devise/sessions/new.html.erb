@@ -1,5 +1,8 @@
-<h2>Log in</h2>
 
+<div class="form-container">
+  <div class="form-image" style="background-image: url(<%= image_path "trees.jpg" %>)">
+  </div>
+  <div class="form">
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
     <%= f.input :email,
@@ -10,11 +13,14 @@
                 required: false,
                 input_html: { autocomplete: "current-password" } %>
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
-
   <div class="form-actions">
     <%= f.button :submit, "Log in" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
+
+  </div>
+  </div>
+
