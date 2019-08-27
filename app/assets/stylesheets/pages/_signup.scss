@@ -1,6 +1,6 @@
-.form-container-login {
-  width: 800px;
-  height: 450px;
+.form-container-signup {
+  width: 920px;
+  height: 540px;
   background-color: #fff;
   margin: 40px auto;
   display: flex;
@@ -8,13 +8,18 @@
   box-shadow: $box-shadow;
 }
 
-.form-image-login {
-  width: 400px;
+.form-image-signup {
+  width: 414px;
 }
 
-.form-login {
+.form-signup {
   padding: 12px;
   display: flex;
   align-items: center;
-  margin: 0 auto;
+  margin: 0 40px;
+  width: 506px;
+}
+
+.form-inputs-signup {
+  width: 400px;
 }

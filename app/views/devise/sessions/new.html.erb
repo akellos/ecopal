@@ -1,8 +1,8 @@
 
-<div class="form-container">
-  <div class="form-image" style="background-image: url(<%= image_path "trees.jpg" %>)">
+<div class="form-container-login">
+  <div class="form-image-login" style="background-image: url(<%= image_path "trees.jpg" %>)">
   </div>
-  <div class="form">
+  <div class="form-login">
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
     <%= f.input :email,
