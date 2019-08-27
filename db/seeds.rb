@@ -6,14 +6,27 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Bronze = 10
-Silver = 30
-Gold = 60
+if Badge.all.length == 0
+  bronze = Badge.create!(
+    milestone: 10,
+    title: "Bronze",
+    icon: "bronze.png")
 
-badge = Badge.create!(
-  bronze: 10
-  silver: 30
-  Gold: 60)
+  silver = Badge.create!(
+    milestone: 30,
+    title: "Silver",
+    icon: "silver.png")
+
+  gold = Badge.create!(
+    milestone: 60,
+    title: "Gold",
+    icon: "gold.png")
+  nothing = Badge.create!(
+    milestone: 0,
+    title: "Newcomer",
+    icon: "newcomer.png"
+  )
+end
 
 
 puts 'Cleaning database...'
@@ -28,7 +41,6 @@ puts 'Creating 20 random users...'
     email: Faker::Internet.email,
     image: "https://thispersondoesnotexist.com",
     password: Faker::Internet.password(min_length: 8)
-
   )
 end
 
