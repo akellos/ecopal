@@ -1,1 +1,43 @@
 // Specific CSS for your home-page
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  height: calc(100vh - 156px);
+  padding: 150px 0;
+  margin: 0;
+  text-align: center;
+  width: 1440px;
+  height: 1783px;
+}
+
+// .banner h1 {
+//   margin: 0;
+//   color: white;
+//   font-size: 32px;
+//   // font-family: sans-serif;
+//   font-family: lobster;
+//   font-size: 60px;
+//   text-align: center;
+//   margin: 0;
+// }
+
+// .banner p {
+//   font-size: 20px;
+//   color: white;
+//   font-family: 'Roboto', sans-serif;
+//   text-align: center;
+// }
+
+// .banner-bottom {
+//   background-color: white;
+//   height: 400px;
+// }
+
+// .chef-search {
+//   width: 275px;
+// }
+
+// .container p {
+//   margin-bottom: 30px;
+// }
