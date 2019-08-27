@@ -1,0 +1,19 @@
+.form-container {
+  width: 800px;
+  height: 450px;
+  margin: 40px auto;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: $box-shadow;
+}
+
+.form-image {
+  width: 400px;
+}
+
+.form {
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
