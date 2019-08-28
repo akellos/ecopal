@@ -1,14 +1,20 @@
 // Specific CSS for your home-page
 
 .banner {
+  display: flex;
   background-size: cover;
   background-position: center;
   height: calc(100vh - 156px);
   padding: 150px 0;
   margin: 0;
   text-align: center;
+  justify-content: center;
   width: 1440px;
   height: 1783px;
+}
+
+.btn-wrapper {
+
 }
 
 // .banner h1 {
