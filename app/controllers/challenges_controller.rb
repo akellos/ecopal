@@ -1,5 +1,4 @@
 class ChallengesController < ApplicationController
-
   def show
     @challenge = Challenge.find(params[:id])
   end
@@ -18,7 +17,7 @@ class ChallengesController < ApplicationController
     @user = current_user
     @challenge.user = @user
     if @challenge.save
-      redirect_to challenge_path
+      redirect_to challenges_path
     else
       render :new
     end
