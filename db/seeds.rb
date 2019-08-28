@@ -6,7 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+puts 'Cleaning database...'
+
+User.destroy_all
+
 if Badge.all.length == 0
+  puts "Creating basic badges."
   bronze = Badge.create!(
     milestone: 10,
     title: "Bronze",
@@ -21,17 +26,14 @@ if Badge.all.length == 0
     milestone: 60,
     title: "Gold",
     icon: "gold.png")
-  nothing = Badge.create!(
+  rookie = Badge.create!(
     milestone: 0,
-    title: "Newcomer",
-    icon: "newcomer.png"
+    title: "Rookie",
+    icon: "rookie.png"
   )
+  puts "Created basic badges: 'Bronze', 'Silver', 'Gold' and 'Rookie'"
 end
 
-
-puts 'Cleaning database...'
-
-User.destroy_all
 
 puts 'Creating 20 random users...'
 
@@ -44,12 +46,9 @@ puts 'Creating 20 random users...'
   )
 end
 
-first_review_user = User.create!(
-    name: Faker::Name.name,
-    email: Faker::Internet.email,
-    password: Faker::Internet.password(min_length: 8),
-    image: "https://images.unsplash.com/photo-1517810095498-0f282469aba9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-  )
+puts "Created 20 random users"
+
+puts 'Creating users "Lila", "Evia", "Ahmad" and "Moritz". For each user Email: NAME@mail.com; pw: 654321...'
 
 lila = User.create!(
   name: "Lila",
@@ -80,4 +79,39 @@ moritz = User.create!(
 )
 
 puts 'Created "Lila", "Evia", "Ahmad" and "Moritz"'
+
+puts "Creating basic challenges: "
+
+plastic_free = Challenge.create!(
+  name: "Plastic-free",
+  duration: 20,
+  description: "Ready to take the Plastic Free challenge? We will help you to keep motivated during the challenge. Users enjoy reading stories from our participants and other news from our global movement. Get the latest plastic-free ideas (don’t worry – we won’t spam you or pass your email address onto anyone else). Together we can make a difference and be a part of the solution.",
+  image: "https://images.unsplash.com/flagged/photo-1556667885-a6e05b14f2eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80",
+  reward: 100,
+  address: "Unit 13, 138 Kingsland Rd, London E2 8DY",
+  user: lila
+)
+
+stay_dark = Challenge.create!(
+  name: "Stay dark",
+  duration: 10,
+  description: "Try to get by without electricity. That also means: No Netflix!",
+  image: "https://images.unsplash.com/photo-1511406361295-0a1ff814c0ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
+  reward: 50,
+  address: "Rudi-Dutschke-Straße 26, 10969 Berlin, Germany",
+  user: moritz
+)
+
+stay_dark = Challenge.create!(
+  name: "Leave your car at home",
+  duration: 30,
+  description: "Run, Forrest, Run!",
+  image: "https://images.unsplash.com/photo-1501236570302-906143a7c9f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
+  reward: 200,
+  address: "16 Villa Gaudelet, 75011 Paris, France",
+  user: ahmad
+)
+
+
+puts "Created basic challenges 'Plastic-free', 'Stay dark' and 'Leave your car at home'"
 
