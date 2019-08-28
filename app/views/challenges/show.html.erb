@@ -13,7 +13,7 @@
 
 <h3>Challenge participants:</h3>
 <% @participants.each do |participant| %>
-  <p><%= participant.user.name %></p>
+  <p><%= link_to participant.user.name, dashboard_path(user:participant.id) %></p>
   <% end  %>
 
 <div
