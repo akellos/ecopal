@@ -1,5 +1,11 @@
 <h1>List of Challenges</h1>
 
 <% @challenges.each do |challenge| %>
-  <p><%= link_to challenge.name, challenge_path(challenge) %></p>
+<ul>
+  <li><%= link_to challenge.name, challenge_path(challenge) %></li>
+
+</ul>
   <% end %>
+
+<br>
+ <%= link_to "create a challenge", new_challenge_path %>
