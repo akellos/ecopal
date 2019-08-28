@@ -23,6 +23,10 @@ class ChallengesController < ApplicationController
     end
   end
 
+  def edit
+    @challenge = Challenge.find(params[:id])
+  end
+
   def update
     @challenge = Challenge.find(params[:id])
     @challenge.update(params[:id])
