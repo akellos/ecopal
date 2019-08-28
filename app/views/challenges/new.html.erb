@@ -8,6 +8,8 @@
      <%= f.input :end_date, as: :date, placeholder: 'When does your challenge end?', label: false %>
       <%= f.input :address, placeholder: 'Where does your challenge take place?', label: false %>
       <%= f.input :description, placeholder: 'Tell us about your challenge', label: false %>
+      <%= f.input :image %>
+      <%= f.input :image_cache, as: :hidden %>
     </div>
     <%= f.button :submit, "create your challenge" %>
   <% end %>
