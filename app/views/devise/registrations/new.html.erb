@@ -30,6 +30,12 @@
                 label: false,
                 placeholder: "Password confirmation*",
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :location,
+                required: true,
+                autofocus: true,
+                label: false,
+                placeholder: "City",
+                input_html: { autocomplete: "city" }%>
     <%= f.input :bio,
                 autofocus: true,
                 label: false,
