@@ -1,6 +1,14 @@
 class ChallengesController < ApplicationController
   def show
     @challenge = Challenge.find(params[:id])
+    @participants = @challenge.trackers
+    @markers = @participants.map do |participant|
+      {
+        lat: participant.user.latitude,
+        lng: participant.user.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { participant: participant })
+      }
+    end
   end
 
   def index
