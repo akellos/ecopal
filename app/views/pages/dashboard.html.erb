@@ -1,6 +1,8 @@
 <h1>DASHBOARD</h1>
 
-<% @user.challenges.each do |challenge| %>
+
+
+<% @user.trackers.each do |tracker| %>
   <p>You have joined the following challenges:</p>
-  <p><%= challenge.name %></p>
+  <p><%= tracker.challenge.name %></p>
 <% end %>
