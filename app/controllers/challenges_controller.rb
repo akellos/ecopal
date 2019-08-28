@@ -1,7 +1,18 @@
 class ChallengesController < ApplicationController
   def show
     @challenge = Challenge.find(params[:id])
+
+    @participants = @challenge.trackers
+    @markers = @participants.map do |participant|
+      {
+        lat: participant.user.latitude,
+        lng: participant.user.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { participant: participant })
+      }
+    end
+
     authorize @challenge
+
   end
 
   def index
@@ -33,8 +44,10 @@ class ChallengesController < ApplicationController
 
   def update
     @challenge = Challenge.find(params[:id])
-    @challenge.update(params[:id])
+    
+    @challenge.update(challenge_params)
     authorize @challenge
+    redirect_to challenge_path(@challenge)
   end
 
   def destroy
