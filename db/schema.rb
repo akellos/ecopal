@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_28_124059) do
+
+ActiveRecord::Schema.define(version: 2019_08_28_134208) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,7 +53,7 @@ ActiveRecord::Schema.define(version: 2019_08_28_124059) do
   create_table "trackers", force: :cascade do |t|
     t.bigint "challenge_id"
     t.bigint "user_id"
-    t.boolean "completed"
+    t.boolean "completed", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["challenge_id"], name: "index_trackers_on_challenge_id"
@@ -72,6 +74,11 @@ ActiveRecord::Schema.define(version: 2019_08_28_124059) do
     t.string "avatar"
     t.string "photo"
     t.string "image"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet "current_sign_in_ip"
+    t.inet "last_sign_in_ip"
     t.string "location"
     t.float "latitude"
     t.float "longitude"

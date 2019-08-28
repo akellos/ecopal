@@ -4,5 +4,13 @@
 
 <% @user.trackers.each do |tracker| %>
   <p>You have joined the following challenges:</p>
-  <p><%= tracker.challenge.name %></p>
+  <p>Name of user: <%= tracker.user.name %></p>
+  <p>Name of the Challenge: <%= tracker.challenge.name %></p>
+  <p>Days since last login: <%= @days %></p>
+  <div>
+    <p>Check your progress:</p>
+    <% @days.times do %>
+      <div class="grey-btn"><%= @user.last_sign_in_at.strftime("%A") %></div>
+    <% end %>
+  </div>
 <% end %>
