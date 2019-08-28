@@ -2,6 +2,7 @@ class TrackersController < ApplicationController
   def create
     @challenge = Challenge.find(params[:challenge_id])
     @tracker = Tracker.new
+    authorize @tracker
     @tracker.challenge = @challenge
     @tracker.completed = false
     @tracker.user = current_user

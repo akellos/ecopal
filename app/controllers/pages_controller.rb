@@ -5,7 +5,11 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @user = current_user
+    if params[:user]
+      @user = User.find(params[:user])
+    else
+      @user = current_user
+    end
     @days = days_passed(@user)
   end
 

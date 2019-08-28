@@ -8,4 +8,6 @@ class User < ApplicationRecord
   has_many :achievements
   has_many :badges, through: :achievements
   has_many :trackers
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
 end
