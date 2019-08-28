@@ -1,4 +1,4 @@
-
+<div class="form-wrapper" style="background-image: url(<%= image_path "sky.jpg" %>)"></div>
 <div class="form-container-signup">
   <div class="form-image-signup" style="background-image: url(<%= image_path "sky.jpg" %>)">
   </div>
@@ -10,20 +10,30 @@
      <%= f.input :name,
                 required: true,
                 autofocus: true,
+                label: false,
+                placeholder: "Name*",
                 input_html: { autocomplete: "name" }%>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
+                label: false,
+                placeholder: "Email",
                 input_html: { autocomplete: "email" }%>
     <%= f.input :password,
                 required: true,
+                label: false,
+                placeholder: "Password*",
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
                 required: true,
+                label: false,
+                placeholder: "Password confirmation*",
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :bio,
                 autofocus: true,
+                label: false,
+                placeholder: "Bio",
                 input_html: { autocomplete: "bio" }%>
   </div>
 
