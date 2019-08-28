@@ -1,3 +1,7 @@
 <h1><%= @challenge.name %></h1>
 
-<p><%= link_to "Join this challenge", dashboard_path  %></p>
+
+ <%= simple_form_for [@challenge, Tracker.new] do |f| %>
+  <%= f.button :submit, "JOIN", class: "btn-primary", id: "btn-booking" %>
+<% end %>
+
