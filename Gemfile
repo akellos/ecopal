@@ -8,6 +8,7 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.2.3'
 gem 'redis'
+gem 'pg_search'
 gem 'pundit'
 
 gem 'geocoder'

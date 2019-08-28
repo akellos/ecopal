@@ -8,6 +8,9 @@
 
 puts 'Cleaning database...'
 
+Achievement.destroy_all
+Badge.destroy_all
+Challenge.destroy_all
 User.destroy_all
 
 if Badge.all.length == 0
