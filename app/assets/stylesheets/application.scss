@@ -11,3 +11,12 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+
+.marker {
+  background-image: image-url("ecopal_marker.png") !important;
+  background-repeat: no-repeat;
+
+  z-index: 1000;
+}
