@@ -1,0 +1,16 @@
+<h1>update challenge</h1>
+<br>
+<div class="challenge-form">
+  <%= simple_form_for @challenge,  wrapper: :vertical_form do |f| %>
+    <%= f.input :name, placeholder: 'Enter a name for your challenge', label: false %>
+    <%= f.input :duration, placeholder: 'Enter the number of days your challenge takes place', label: false%>
+    <%= f.input :start_date, as: :date, placeholder: 'When does your challenge start?', label: false %>
+     <%= f.input :end_date, as: :date, placeholder: 'When does your challenge end?', label: false %>
+      <%= f.input :address, placeholder: 'Where does your challenge take place?', label: false %>
+      <%= f.input :description, placeholder: 'Tell us about your challenge', label: false %>
+      <%= f.input :image %>
+      <%= f.input :image_cache, as: :hidden %>
+    </div>
+    <%= f.button :submit, "create your challenge" %>
+  <% end %>
+</div>
