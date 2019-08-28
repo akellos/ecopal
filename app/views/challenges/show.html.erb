@@ -1,7 +1,6 @@
 <h1><%= @challenge.name %></h1>
 
-
+<%= cl_image_tag @challenge.image, height: 300, width: 400, crop: :fill %>
  <%= simple_form_for [@challenge, Tracker.new] do |f| %>
   <%= f.button :submit, "JOIN", class: "btn-primary", id: "btn-booking" %>
 <% end %>
-
