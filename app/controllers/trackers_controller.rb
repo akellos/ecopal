@@ -11,4 +11,9 @@ class TrackersController < ApplicationController
       redirect_to challenge_path(@challenge)
     end
   end
+
+  def days_passed
+    @days_since_last_sign_in = (@tracker.user.last_sign_in_at..Date.today).count
+  end
+
 end
