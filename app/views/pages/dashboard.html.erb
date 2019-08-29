@@ -27,7 +27,7 @@
 <h1> These are your badges </h1>
 <% @badges.each do |badge| %>
 <%= badge.title %>
-<%= image_tag badge.icon, width: 200, height: 200 %>
+<%= image_tag badge.icon, width: 100, height: 100 %>
 <% end %>
 
 <%= link_to "edit profile", edit_user_registration_path %>
