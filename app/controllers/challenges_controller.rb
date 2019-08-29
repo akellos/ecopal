@@ -9,11 +9,10 @@ class ChallengesController < ApplicationController
         lng: participant.user.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { participant: participant })
       }
+
     end
-
     authorize @challenge
-
-  end
+end
 
   def index
     @challenges = policy_scope(Challenge)
@@ -44,7 +43,7 @@ class ChallengesController < ApplicationController
 
   def update
     @challenge = Challenge.find(params[:id])
-    
+
     @challenge.update(challenge_params)
     authorize @challenge
     redirect_to challenge_path(@challenge)
