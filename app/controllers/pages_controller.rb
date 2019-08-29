@@ -5,6 +5,8 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @user_badge = Badge.check(current_user)
+    @badges = current_user.badges
     if params[:user]
       @user = User.find(params[:user])
     else
