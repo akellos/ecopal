@@ -6,10 +6,11 @@
   width: 120px;
   padding: 10px;
   border-width: 1px;
-  border-radius: 5px;
+  border-radius: 10px;
   border-style: solid;
   border-color: rgba(0, 0, 0, 0.2);
   background: linear-gradient(#FFFFFF 40%, #EEEEEE 60%);
+  background-color: blue;
   border: 3px solid #FFFFFF;
   // outline: 3px solid #D5D5D5;
   box-shadow: 2px 4px #AAAAAA;
@@ -27,6 +28,10 @@
   box-shadow: 0 0 0 white;
 }
 
+.active {
+  background: rgb(143, 195, 83) !important;
+}
+
 .btn:active {
   transform: translateY(1px);
   filter: saturate(150%);
@@ -38,10 +43,10 @@
   margin: 0 auto;
 }
 
-.grey-btn.active {
-  transform: translateY(1px);
-  filter: saturate(150%);
-}
+// .grey-btn.active {
+//   transform: translateY(1px);
+//   filter: saturate(150%);
+// }
 
 
 // .clickable {

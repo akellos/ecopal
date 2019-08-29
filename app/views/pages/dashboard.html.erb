@@ -11,8 +11,10 @@
           <div class="">
             tracker.challenge.name
             <% tracker.time.each do |day| %>
+            <div class="grey-btn-container">
               <div class="grey-btn"><%= day %></div>
             <% end %>
+            </div>
           </div>
 
         <% end %>
@@ -31,3 +33,16 @@
 <%= link_to "edit profile", edit_user_registration_path %>
 
 
+<script>
+  const greyButtons = document.querySelectorAll(".grey-btn");
+  console.log(greyButtons);
+
+  const changeButtonsOnClick = (event) => {
+    console.log(event);
+    event.target.classList.toggle("active");
+  };
+
+  greyButtons.forEach((el) => {
+    el.addEventListener("click", changeButtonsOnClick);
+  });
+</script>
