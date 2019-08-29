@@ -31,7 +31,6 @@
 <%# end %>
 
 <%= simple_form_for(Friendship.new) do |f| %>
-  <%= f.association :sender, selected: current_user %>
   <%= f.association :recipient, collection: User.all %>
   <%= f.submit %>
 <% end %>
