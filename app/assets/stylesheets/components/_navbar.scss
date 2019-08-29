@@ -10,3 +10,22 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+.transparent-abs {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 2000;
+  background-color: transparent !important;
+}
+
+.navbar-brand {
+  padding-left: 25px;
+}
+
+.navbar-brand img {
+  width: 80px !important;
+}
+
+.dropdown-toggle {
+  margin-right: 25px;
+}
