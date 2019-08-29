@@ -1,5 +1,7 @@
 <h1>DASHBOARD</h1>
 
+<%= cl_image_tag @user.image, height: 300, width: 400, crop: :fill %>
+@user.name
 
 
 
@@ -29,8 +31,9 @@
 <%= badge.title %>
 <%= image_tag badge.icon, width: 200, height: 200 %>
 <% end %>
-
-<%= link_to "edit profile", edit_user_registration_path %>
+<% if policy(@user).edit? %>
+  <%= link_to "edit profile", edit_user_registration_path %>
+<% end %>
 
 
 <script>

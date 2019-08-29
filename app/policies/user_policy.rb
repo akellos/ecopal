@@ -4,7 +4,20 @@ class UserPolicy < ApplicationPolicy
       scope.all
     end
   end
-  def show?
+
+  def update?
     record == user
+  end
+
+  def edit?
+    update?
+  end
+
+  def destroy?
+    update?
+  end
+
+  def show?
+    true
   end
 end
