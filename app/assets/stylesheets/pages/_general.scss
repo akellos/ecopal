@@ -16,11 +16,13 @@ body {
 }
 
 .navbar {
-  background-color: grey;
+  background-color: white;
   color: white;
   padding: 16px 0;
 
-
+#transparent-navbar {
+  background-color: rgba(0, 0, 0, 0);
+}
   /*
   ADD THE FOLLOWING FOR A STICKY NAVBAR
 
@@ -30,7 +32,7 @@ body {
 }
 
 .footer {
-  background-color: grey;
+  background-color: white;
   color: white;
   padding: 16px 0;
 }
