@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2019_08_29_105708) do
   create_table "trackers", force: :cascade do |t|
     t.bigint "challenge_id"
     t.bigint "user_id"
-    t.boolean "completed", default: false
+    t.boolean "completed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["challenge_id"], name: "index_trackers_on_challenge_id"
