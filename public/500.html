@@ -1,9 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>We're sorry, but something went wrong (500)</title>
+  <title>Sorry something went wrong :( (500)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
+   .background-container {
+    position: relative;
+   }
+
+   .pal {
+    position: absolute;
+    top: 50px;
+    width: 250px;
+    left: calc(50% - 125px);
+
+   }
+
+  .background {
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    object-position: bottom;
+  }
+
   .rails-default-error-page {
     background-color: #D0F4F7;
   }
@@ -15,7 +34,6 @@
   }
 
   .rails-default-error-page div.dialog > div {
-    background-color: rgb(178, 237, 106);
     height: 250px;
     width: 450px;
     padding: 18px;
@@ -24,29 +42,29 @@
     flex-direction: column;
     justify-content: center;
     font-family: 'sans-serif';
-    font-size: 20px;
     color: rgb(124, 132, 114);
   }
 
   .rails-default-error-page h1 {
-    font-size: 100%;
-    font-family: 'sans-serif';
+    font-size: 20px;
+    color: rgb(124, 132, 114);
   }
 
   .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    font-family: 'sans-serif';
+    text-align: center;
   }
   </style>
 </head>
 
 <body class="rails-default-error-page">
-  <!-- This file lives in public/500.html -->
-  <div class="dialog">
-    <div>
-      <h1>Oops. We're sorry, but something went wrong.</h1>
+  <div class="background-container">
+   <img src="/images/background.png" alt="background image" class="background">
+    <div class="pal">
+      <img src="/images/pal.png" alt="pal">
+      <h1>Something went wrong (500)</h1>
     </div>
+  </div>
+
   </div>
 </body>
 </html>
