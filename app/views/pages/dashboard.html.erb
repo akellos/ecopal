@@ -24,3 +24,15 @@
 
 <%= link_to "edit profile", edit_user_registration_path %>
 
+<h3>Add More Friends</h3>
+<%#= form_tag(friendships_path, method: "post") do %>
+  <%#= collection_check_boxes(:user, :friend_ids, @nonfriends, :id, :username_with_full_name)%>
+  <%#= submit_tag("Add Friends")%>
+<%# end %>
+
+<%= simple_form_for(Friendship.new) do |f| %>
+  <%= f.association :sender, selected: current_user %>
+  <%= f.association :recipient, collection: User.all %>
+  <%= f.submit %>
+<% end %>
+

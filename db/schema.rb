@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_29_105708) do
+ActiveRecord::Schema.define(version: 2019_08_29_110321) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2019_08_29_105708) do
     t.bigint "recipient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status", default: "pending"
     t.index ["recipient_id"], name: "index_friendships_on_recipient_id"
     t.index ["sender_id"], name: "index_friendships_on_sender_id"
   end
@@ -60,7 +61,7 @@ ActiveRecord::Schema.define(version: 2019_08_29_105708) do
   create_table "trackers", force: :cascade do |t|
     t.bigint "challenge_id"
     t.bigint "user_id"
-    t.boolean "completed"
+    t.boolean "completed", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["challenge_id"], name: "index_trackers_on_challenge_id"
