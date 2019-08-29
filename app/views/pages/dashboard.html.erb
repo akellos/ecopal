@@ -2,18 +2,24 @@
 
 
 
-<% @user.trackers.each do |tracker| %>
-  <p>You have joined the following challenges:</p>
-  <p>Name of user: <%= tracker.user.name %></p>
-  <p>Name of the Challenge: <%= tracker.challenge.name %></p>
-  <p>Days since last login: <%= @days %></p>
+
   <div>
     <% if current_user == @user %>
-      <p>Check your progress:</p>
-      <% @list_of_days.each do |day| %>
-        <div class="grey-btn"><%= day.strftime("%A") %></div>
-      <% end %>
+      <h2>Your Challenges:</h2>
+      <div class="">
+        <% @trackers.each do |tracker| %>
+          <div class="">
+            tracker.challenge.name
+            <% tracker.time.each do |day| %>
+              <div class="grey-btn"><%= day %></div>
+            <% end %>
+          </div>
+
+        <% end %>
+      </div>
     <% else %>
     <% end %>
   </div>
-<% end %>
+
+
+

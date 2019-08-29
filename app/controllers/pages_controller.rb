@@ -10,8 +10,9 @@ class PagesController < ApplicationController
     else
       @user = current_user
     end
+    @trackers = @user.trackers
     # @number_of_days = number_of_days_passed(@user)
-    @list_of_days = ((@user.last_sign_in_at.to_date - rand(5))..(Date.today))
+    #@list_of_days = ((@user.last_sign_in_at.to_date - rand(5))..(Date.today))
   end
 
   # def number_of_days_passed(user)

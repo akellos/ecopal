@@ -19,7 +19,7 @@
 }
 
 .grey-btn:hover {
-  background: linear-gradient(#FFFFFF 40%, #EEEEEE 60%);
+  background: linear-gradient(#EEEEEE 1%, #FFFFFF 99%);
   border: 3px solid #FFFFFF;
   // outline: 3px solid #D5D5D5;
   text-decoration: none;
@@ -37,6 +37,47 @@
   bottom: 420px;
   margin: 0 auto;
 }
+
+.grey-btn.active {
+  transform: translateY(1px);
+  filter: saturate(150%);
+}
+
+
+// .clickable {
+//   padding: 40px;
+//   width: 180px;
+//   border: 1px solid #dedede;
+//   color: #a0a0a0;
+//   margin-right: 10px;
+//   margin-bottom: 10px;
+//   text-align: center;
+//   display: flex;
+//   flex-direction: column;
+//   cursor: pointer;
+// }
+
+// .clickable i {
+//   font-size: 24px;
+//   margin-bottom: 10px;
+// }
+
+// .clickable:hover i {
+//   color: #52ACF4;
+// }
+
+// .clickable.active {
+//   color: inherit;
+//   border-color: inherit;
+// }
+
+// .clickable.active i {
+//   color: #52ACF4;
+// }
+
+
+
+
 
 // .my-button {
 //   display: block;
