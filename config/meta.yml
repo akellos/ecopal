@@ -1,6 +1,6 @@
 meta_product_name: "ecopal"
 meta_title: "ecopal - Save the planet one challenge at a time"
 meta_description: "Our planet needs more attention but most of us don't do anything. Ecopal helps you to change that and motivate other people to live more eco-friendly."
-meta_image: "logo.png" # should exist in `app/assets/images/`
+meta_image: "trees-error.png" # should exist in `app/assets/images/`
 meta_url: "https://www.ecopal.dev"
 meta_type: "social"
