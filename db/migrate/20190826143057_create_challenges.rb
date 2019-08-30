@@ -7,7 +7,6 @@ class CreateChallenges < ActiveRecord::Migration[5.2]
       t.date :end_date
       t.text :description
       t.string :image
-      t.string :photo
       t.integer :reward
       t.string :address
       t.integer :coordinates, array: true, default: []
