@@ -10,6 +10,7 @@ gem 'rails', '5.2.3'
 gem 'redis'
 gem 'pg_search'
 gem 'pundit'
+gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'geocoder'
 gem 'autoprefixer-rails'
