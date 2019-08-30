@@ -1,0 +1,56 @@
+.challenge-show-title {
+  padding-top: 35px;
+  padding-bottom: 25px;
+  font-size: 45px;
+  color: grey;
+  font-weight: bold;
+}
+
+.challenge-show-image {
+  padding: 30px;
+  background-color: hsl(162, 44%, 67%);
+  box-shadow: $box-shadow;
+  border-radius: 8px;
+}
+
+.challenge-show-container {
+  display: flex;
+}
+
+.challenge-show-container div {
+  margin: 30px;
+  color: grey;
+}
+
+.btn-challenge {
+  background-color: hsl(88, 47%, 53%);
+  border-color: none;
+  border-width: 0;
+}
+
+
+.challenge-show-ecopals {
+  color: grey;
+  font-size: 22px;
+  padding-left: 30px;
+  padding-right: 130px;
+  font-weight: bold;
+}
+
+.show-container {
+  display: flex;
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+#map {
+  margin-top: 10px;
+}
+
+.participant-list {
+  padding-left: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
