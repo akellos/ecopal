@@ -6,15 +6,12 @@ class TrackersController < ApplicationController
     @tracker.challenge = @challenge
     @tracker.completed = false
     @tracker.user = current_user
+    @tracker.time = (Date.today..(Date.today + @challenge.duration)).to_a.map(&:to_s)
+    @tracker.pending = @tracker.time
     if @tracker.save
       redirect_to dashboard_path
     else
-      redirect_to challenge_path(@challenge)
+      redirect_to challenges_path(@challenge)
     end
   end
-
-  def days_passed
-    @days_since_last_sign_in = (@tracker.user.last_sign_in_at..Date.today).count
-  end
-
 end

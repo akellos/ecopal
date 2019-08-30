@@ -33,12 +33,7 @@
     <p class="alert"><%= alert %></p> -->
   <body>
     <div class="site">
-      <% if params[:controller] == "pages" && params[:action] == "home" %>
-        <% else %>
-        <div class="navbar">
-           <%= render 'shared/navbar' %>
-        </div>
-      <% end %>
+      <%= render 'shared/navbar' %>
       <%= render 'shared/flashes' %>
       <div class="main-container main-container--signup">
         <%= yield %>

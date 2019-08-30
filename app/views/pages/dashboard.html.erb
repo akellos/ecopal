@@ -1,19 +1,29 @@
 <h1>DASHBOARD</h1>
 
+<%= cl_image_tag @user.image, height: 300, width: 400, crop: :fill %>
+@user.name
 
 
-<% @user.trackers.each do |tracker| %>
-  <p>You have joined the following challenges:</p>
-  <p>Name of user: <%= tracker.user.name %></p>
-  <p>Name of the Challenge: <%= tracker.challenge.name %></p>
-  <p>Days since last login: <%= @days %></p>
+
   <div>
-    <p>Check your progress:</p>
-    <% @days.times do %>
-      <div class="grey-btn"><%= @user.last_sign_in_at.strftime("%A") %></div>
+    <% if current_user == @user %>
+      <h2>Your Challenges:</h2>
+      <div class="">
+        <% @trackers.each do |tracker| %>
+          <div class="">
+            tracker.challenge.name
+            <% tracker.time.each do |day| %>
+            <div class="grey-btn-container">
+              <div class="grey-btn"><%= day %></div>
+            <% end %>
+            </div>
+          </div>
+
+        <% end %>
+      </div>
+    <% else %>
     <% end %>
   </div>
-<% end %>
 
 
 <h1> These are your badges </h1>
@@ -21,9 +31,21 @@
 <%= badge.title %>
 <%= image_tag badge.icon, width: 100, height: 100 %>
 <% end %>
+<% if policy(@user).edit? %>
+  <%= link_to "edit profile", edit_user_registration_path %>
+<% end %>
 
-<%= link_to "edit profile", edit_user_registration_path %>
 
+<script>
+  const greyButtons = document.querySelectorAll(".grey-btn");
+  console.log(greyButtons);
+
+  const changeButtonsOnClick = (event) => {
+    console.log(event);
+    event.target.classList.toggle("active");
+  };
+
+<<<<<<< HEAD
 <h3>Add More Friends</h3>
 <%#= form_tag(friendships_path, method: "post") do %>
   <%#= collection_check_boxes(:user, :friend_ids, @nonfriends, :id, :username_with_full_name)%>
@@ -35,3 +57,9 @@
   <%= f.submit %>
 <% end %>
 
+=======
+  greyButtons.forEach((el) => {
+    el.addEventListener("click", changeButtonsOnClick);
+  });
+</script>
+>>>>>>> 02388036f477c0c0ae1060aae3e668eaff09aa18

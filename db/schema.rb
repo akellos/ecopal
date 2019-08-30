@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_08_29_105708) do
+=======
+ActiveRecord::Schema.define(version: 2019_08_29_110423) do
+>>>>>>> 02388036f477c0c0ae1060aae3e668eaff09aa18
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +67,8 @@ ActiveRecord::Schema.define(version: 2019_08_29_105708) do
     t.boolean "completed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "time", default: [], array: true
+    t.string "pending", default: [], array: true
     t.index ["challenge_id"], name: "index_trackers_on_challenge_id"
     t.index ["user_id"], name: "index_trackers_on_user_id"
   end
