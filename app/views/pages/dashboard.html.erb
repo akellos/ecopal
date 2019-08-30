@@ -1,4 +1,9 @@
-<h1>DASHBOARD</h1>
+<div class="dashboard-container">
+  <div class="dashboard-col">
+
+
+      <h3>My challenges</h3>
+      <% if current_user == @user %>
 
 <!-- Add this later, removed to fix demo day <%#= cl_image_tag @user.image, %> -->
 
@@ -7,27 +12,50 @@
 @user.name
 
 
-
-
   <div>
     <% if current_user == @user %>
       <h2>Your Challenges:</h2>
       <div class="">
         <% @trackers.each do |tracker| %>
-          <div class="">
-            tracker.challenge.name
-            <% tracker.time.each do |day| %>
-            <div class="grey-btn-container">
-              <div class="grey-btn"><%= day %></div>
-            <% end %>
-            </div>
+       <div class="progress-card">
+          <div class="challenge-image">
+            <%= cl_image_tag tracker.challenge.image, height: 180, width: 180, crop: :fill %>
           </div>
+          <h3 class="heading-tertiary">
+             <%= tracker.challenge.name %>
+          </h3>
+            <p class="progress-card-status">
+              Progress
+            </p>
+        </div>
+            <% end %>
+    </div>
+          <% end %>
 
-        <% end %>
+  <div class="dashboard-col">
+    <div class="user-profile">
+      <div class="profile-card">
+      <%= cl_image_tag @user.image, height: 180, width: 180, crop: :fill, class: "avatar-profile" %>
+      <p class="profile-name"><%= @user.name %></p>
       </div>
-    <% else %>
-    <% end %>
+      <div class="profile-card">
+        <p>Badges</p>
+      <% @badges.each do |badge| %>
+      <%= badge.title %>
+      <%= image_tag badge.icon, width: 100, height: 100 %>
+      <% end %>
+      </div>
+      <div class="profile-card">
+        Friends
+      </div>
+      <% if policy(@user).edit? %>
+        <%= link_to "edit profile", edit_user_registration_path %>
+      <% end %>
+    </div>
   </div>
+
+  </div>
+ </div>
 
 
 <h1> These are your badges </h1>
