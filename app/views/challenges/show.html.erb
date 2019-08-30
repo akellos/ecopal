@@ -1,6 +1,8 @@
 <h1><%= @challenge.name %></h1>
 
-<%= cl_image_tag @challenge.image, height: 300, width: 400, crop: :fill %>
+<%= cl_image_tag @challenge.photo, height: 300, width: 400, crop: :fill %>
+
+<%= image_tag @article.photo.url(:bright_face) %>
 
 <p><%= link_to "", dashboard_path  %></p>
 <%= link_to edit_challenge_path(@challenge) do %>

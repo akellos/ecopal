@@ -59,6 +59,6 @@ end
   private
 
   def challenge_params
-    params.require(:challenge).permit(:name, :duration, :start_date, :end_date, :description, :image, :reward, :address)
+    params.require(:challenge).permit(:name, :duration, :start_date, :end_date, :description, :image, :reward, :address, :title, :body, :photo)
   end
 end
