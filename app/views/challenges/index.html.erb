@@ -5,7 +5,7 @@
 <% @challenges.each do |challenge| %>
 <div class="card">
   <div class="image-container">
-   <%= image_tag challenge.image, alt: challenge.name %>
+   <%= cl_image_tag challenge.photo, alt: challenge.name %>
    </div>
    <div class="image-text">
   <%= link_to challenge.name, challenge_path(challenge) %>
@@ -17,3 +17,4 @@
 <div class = "index-page-button">
   <%= link_to "create a challenge", new_challenge_path %>
 </div>
+
