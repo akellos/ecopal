@@ -15,7 +15,7 @@ class User < ApplicationRecord
   has_many :friendships, dependent: :destroy
   # has_many :friends, through: :friendships
 
-  mount_uploader :image, PhotoUploader
+  mount_uploader :photo, PhotoUploader
 
   def list_friends
     Friendship.where(recipient: self)
