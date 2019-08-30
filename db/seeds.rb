@@ -105,7 +105,7 @@ stay_dark = Challenge.create!(
   user: moritz
 )
 
-stay_dark = Challenge.create!(
+no_car = Challenge.create!(
   name: "Leave your car at home",
   duration: 30,
   description: "Run, Forrest, Run!",
@@ -115,6 +115,65 @@ stay_dark = Challenge.create!(
   user: ahmad
 )
 
+five_minute_shower = Challenge.create!(
+  name: "Take 5-minute showers",
+  duration: 30,
+  description: "Save water!",
+  image: "shower.png",
+  reward: 200,
+  address: "16 Villa Gaudelet, 75011 Paris, France",
+  user: ahmad
+)
+
+watch_documentary = Challenge.create!(
+  name: "Watch a documentary",
+  duration: 30,
+  description: "Watch a documentary about the environment. Our suggestion: 'Blue planet'!",
+  image: "tv.png",
+  reward: 200,
+  address: "16 Villa Gaudelet, 75011 Paris, France",
+  user: ahmad
+)
+
+reusable_bags = Challenge.create!(
+  name: "Ditch plastic bags!",
+  duration: 30,
+  description: "Ditch plastic bags, use reusable ones!",
+  image: "paper_bag.png",
+  reward: 200,
+  address: "16 Villa Gaudelet, 75011 Paris, France",
+  user: ahmad
+)
+
+no_meat = Challenge.create!(
+  name: "Go vegetarian!",
+  duration: 30,
+  description: "Replace steak with broccoli!",
+  image: "no_meat.png",
+  reward: 200,
+  address: "16 Villa Gaudelet, 75011 Paris, France",
+  user: ahmad
+)
+
+attend_lecture = Challenge.create!(
+  name: "Attend an event or lecture",
+  duration: 30,
+  description: "Attend an event or lecture about the environment!",
+  image: "lecture.png",
+  reward: 200,
+  address: "16 Villa Gaudelet, 75011 Paris, France",
+  user: ahmad
+)
+
+clean_neighborhood = Challenge.create!(
+  name: "Clean up your neigbourhood",
+  duration: 30,
+  description: "Clean up your neighborhood!",
+  image: "clean_up.png",
+  reward: 200,
+  address: "16 Villa Gaudelet, 75011 Paris, France",
+  user: ahmad
+)
 
 puts "Created basic challenges 'Plastic-free', 'Stay dark' and 'Leave your car at home'"
 

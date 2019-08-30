@@ -48,10 +48,20 @@ ActiveRecord::Schema.define(version: 2019_08_29_110423) do
     t.index ["user_id"], name: "index_challenges_on_user_id"
   end
 
+  create_table "friendships", force: :cascade do |t|
+    t.bigint "sender_id"
+    t.bigint "recipient_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "status", default: "pending"
+    t.index ["recipient_id"], name: "index_friendships_on_recipient_id"
+    t.index ["sender_id"], name: "index_friendships_on_sender_id"
+  end
+
   create_table "trackers", force: :cascade do |t|
     t.bigint "challenge_id"
     t.bigint "user_id"
-    t.boolean "completed"
+    t.boolean "completed", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "time", default: [], array: true
@@ -89,6 +99,8 @@ ActiveRecord::Schema.define(version: 2019_08_29_110423) do
   add_foreign_key "achievements", "badges"
   add_foreign_key "achievements", "users"
   add_foreign_key "challenges", "users"
+  add_foreign_key "friendships", "users", column: "recipient_id"
+  add_foreign_key "friendships", "users", column: "sender_id"
   add_foreign_key "trackers", "challenges"
   add_foreign_key "trackers", "users"
 end

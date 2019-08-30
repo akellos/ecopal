@@ -1,0 +1,53 @@
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.image-container {
+  padding: 10px;
+  border-color: black;
+  border-style: solid;
+  margin: 10px;
+  border-width: 0.1px;
+  border-color: rgba(0,0,0, 0.3);
+  background-color: hsl(50, 100%, 52%);
+}
+
+.image-text {
+  text-align: center;
+  padding: 20px;
+  font-family: 'Vollkorn SC', serif;
+  font-size: 19px;
+}
+
+.image-text a {
+  text-decoration: none;
+  color: grey;
+}
+
+.index-page-title {
+  padding-top: 35px;
+  padding-bottom: 25px;
+  font-family: 'Vollkorn SC', serif;
+  font-size: 35px;
+  color: grey;
+
+}
+
+.index-page-button {
+  color: white;
+  padding: 20px;
+  background-color: hsl(183, 68%, 89%);
+  margin-bottom: 20px;
+  border-radius: 5px;
+  margin-top: 25px;
+  margin-bottom: 40px;
+}
+
+.index-page-button a {
+  text-decoration: none;
+  color: hsl(180, 4%, 64%);
+  font-family: 'Vollkorn SC', serif;
+  font-size: 20px;
+}
