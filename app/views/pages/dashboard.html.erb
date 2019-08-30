@@ -1,7 +1,11 @@
 <h1>DASHBOARD</h1>
 
-<%= cl_image_tag @user.image, height: 300, width: 400, crop: :fill %>
+<!-- Add this later, removed to fix demo day <%#= cl_image_tag @user.image, %> -->
+
+<!-- after @user.image, "height: 300, width: 400, crop: :fill" -->
+
 @user.name
+
 
 
 
@@ -35,17 +39,6 @@
   <%= link_to "edit profile", edit_user_registration_path %>
 <% end %>
 
-
-<script>
-  const greyButtons = document.querySelectorAll(".grey-btn");
-  console.log(greyButtons);
-
-  const changeButtonsOnClick = (event) => {
-    console.log(event);
-    event.target.classList.toggle("active");
-  };
-
-<<<<<<< HEAD
 <h3>Add More Friends</h3>
 <%#= form_tag(friendships_path, method: "post") do %>
   <%#= collection_check_boxes(:user, :friend_ids, @nonfriends, :id, :username_with_full_name)%>
@@ -57,9 +50,32 @@
   <%= f.submit %>
 <% end %>
 
-=======
+  <div class="friends ml-3 my-3">
+    <h4>My Friends</h4>
+      <br>
+        <% @user.list_friends.each do |friendship|%>
+          <div class="card-friendship">
+            <%= friendship.sender.name %>
+          </div>
+        <% end %>
+
+  </div>
+
+<script>
+  const greyButtons = document.querySelectorAll(".grey-btn");
+  console.log(greyButtons);
+
+  const changeButtonsOnClick = (event) => {
+    console.log(event);
+    event.target.classList.toggle("active");
+  };
+
+
+
+
+
   greyButtons.forEach((el) => {
     el.addEventListener("click", changeButtonsOnClick);
   });
 </script>
->>>>>>> 02388036f477c0c0ae1060aae3e668eaff09aa18
+
