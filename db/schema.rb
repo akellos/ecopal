@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2019_08_29_110423) do
     t.date "end_date"
     t.text "description"
     t.string "image"
+    t.string "photo"
     t.integer "reward"
     t.string "address"
     t.integer "coordinates", default: [], array: true
