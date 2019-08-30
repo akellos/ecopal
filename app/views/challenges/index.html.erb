@@ -1,18 +1,19 @@
-<h1>List of Challenges</h1>
+<h1 class = "index-page-title">Choose a challenge</h1>
 
-<div id="search-bar">
-  <%= form_tag challenges_path, class: "form-inline md-form m-auto mb-4 challenge-search" , method: :get do %>
-    <span><%= text_field_tag :query, params[:query], class: "form-control mr-sm-2" %><%= submit_tag "Search", name: nil, class: "btn btn-outline-warning btn-rounded btn-sm my-0"  %></span>
-    <span><%= text_field_tag :query, params[:query], class: "form-control mr-sm-2" %><%= submit_tag "Search by challenge location or name", name: nil, class: "btn btn-outline-warning btn-rounded btn-sm my-0"  %></span>
+
+<div class="cards">
+<% @challenges.each do |challenge| %>
+<div class="card">
+  <div class="image-container">
+   <%= image_tag challenge.image, alt: challenge.name %>
+   </div>
+   <div class="image-text">
+  <%= link_to challenge.name, challenge_path(challenge) %>
+</div>
+  </div>
   <% end %>
 </div>
-
-<% @challenges.each do |challenge| %>
-<ul>
-  <li><%= link_to challenge.name, challenge_path(challenge) %></li>
-
-</ul>
-  <% end %>
-
 <br>
- <%= link_to "create a challenge", new_challenge_path %>
+<div class = "index-page-button">
+  <%= link_to "create a challenge", new_challenge_path %>
+</div>
