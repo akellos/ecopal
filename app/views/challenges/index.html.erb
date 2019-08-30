@@ -1,19 +1,19 @@
-<h1 class = "index-page-title">Choose a challenge</h1>
+  <h1 class = "index-page-title">Choose a challenge <%= image_tag "ecopal_marker" %></h1>
 
 
-<div class="cards">
-<% @challenges.each do |challenge| %>
-<div class="card">
-  <div class="image-container">
-   <%= image_tag challenge.image, alt: challenge.name %>
-   </div>
-   <div class="image-text">
-  <%= link_to challenge.name, challenge_path(challenge) %>
-</div>
+  <div class="cards">
+  <% @challenges.each do |challenge| %>
+  <div class="card">
+    <div class="image-container">
+     <%= image_tag challenge.image, alt: challenge.name %>
+     </div>
+     <div class="image-text">
+    <%= link_to challenge.name, challenge_path(challenge) %>
   </div>
-  <% end %>
-</div>
-<br>
-<div class = "index-page-button">
-  <%= link_to "create a challenge", new_challenge_path %>
-</div>
+    </div>
+    <% end %>
+  </div>
+  <br>
+  <div class = "index-page-button">
+    <%= link_to "create a challenge", new_challenge_path %>
+  </div>
