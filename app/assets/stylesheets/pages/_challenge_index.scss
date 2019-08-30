@@ -1,0 +1,82 @@
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.card {
+  margin: 20px;
+  box-shadow: $box-shadow;
+}
+
+.card:hover {
+  transform: scale(1.07);
+}
+
+
+.image-container {
+  padding: 10px;
+  border-style: solid;
+  margin: 10px;
+  border-width: 0.1px;
+  border-color: rgba(0,0,0, 0.3);
+  background-color: hsl(50, 100%, 52%);
+  display: flex;
+  justify-content: center;
+}
+
+.image-container:hover {
+  background-color: hsl(162, 44%, 67%);
+}
+
+.image-container img {
+  width: 75%;
+}
+
+.image-text {
+  text-align: center;
+  padding: 20px;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.image-text a {
+  text-decoration: none;
+  color: grey;
+}
+.image-text a:hover {
+ color: hsl(162, 44%, 67%);
+}
+
+.index-page-title {
+  padding-top: 35px;
+  padding-bottom: 25px;
+  font-size: 45px;
+  color: grey;
+  font-weight: bold;
+
+}
+
+.index-page-button {
+  color: white;
+  padding: 20px;
+  background-color: hsl(183, 68%, 89%);
+  margin-bottom: 20px;
+  border-radius: 5px;
+  margin-top: 25px;
+  margin-bottom: 40px;
+}
+
+.index-page-button a {
+  text-decoration: none;
+  color: hsl(180, 4%, 64%);
+  font-size: 20px;
+}
+
+.index-page-button:hover {
+  transform: scale(1.07);
+}
+
+
+
+

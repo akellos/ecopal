@@ -89,7 +89,7 @@ plastic_free = Challenge.create!(
   name: "Plastic-free",
   duration: 20,
   description: "Ready to take the Plastic Free challenge? We will help you to keep motivated during the challenge. Users enjoy reading stories from our participants and other news from our global movement. Get the latest plastic-free ideas (don’t worry – we won’t spam you or pass your email address onto anyone else). Together we can make a difference and be a part of the solution.",
-  image: "https://images.unsplash.com/flagged/photo-1556667885-a6e05b14f2eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80",
+  image: "no_plastic.png",
   reward: 100,
   address: "Unit 13, 138 Kingsland Rd, London E2 8DY",
   user: lila
@@ -99,22 +99,81 @@ stay_dark = Challenge.create!(
   name: "Stay dark",
   duration: 10,
   description: "Try to get by without electricity. That also means: No Netflix!",
-  image: "https://images.unsplash.com/photo-1511406361295-0a1ff814c0ce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80",
+  image: "dark.png",
   reward: 50,
   address: "Rudi-Dutschke-Straße 26, 10969 Berlin, Germany",
   user: moritz
 )
 
-stay_dark = Challenge.create!(
+no_car = Challenge.create!(
   name: "Leave your car at home",
   duration: 30,
   description: "Run, Forrest, Run!",
-  image: "https://images.unsplash.com/photo-1501236570302-906143a7c9f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80",
+  image: "bike.png",
   reward: 200,
   address: "16 Villa Gaudelet, 75011 Paris, France",
   user: ahmad
 )
 
+five_minute_shower = Challenge.create!(
+  name: "Take 5-minute showers",
+  duration: 30,
+  description: "Save water!",
+  image: "shower.png",
+  reward: 200,
+  address: "16 Villa Gaudelet, 75011 Paris, France",
+  user: ahmad
+)
+
+watch_documentary = Challenge.create!(
+  name: "Watch a documentary",
+  duration: 1,
+  description: "Watch a documentary about the environment. Our suggestion: 'Blue planet'!",
+  image: "tv.png",
+  reward: 200,
+  address: "16 Villa Gaudelet, 75011 Paris, France",
+  user: ahmad
+)
+
+reusable_bags = Challenge.create!(
+  name: "Ditch plastic bags!",
+  duration: 30,
+  description: "Ditch plastic bags, use reusable ones!",
+  image: "paper_bag.png",
+  reward: 200,
+  address: "16 Villa Gaudelet, 75011 Paris, France",
+  user: ahmad
+)
+
+no_meat = Challenge.create!(
+  name: "Go vegetarian!",
+  duration: 30,
+  description: "Replace steak with broccoli!",
+  image: "no_meat.png",
+  reward: 200,
+  address: "16 Villa Gaudelet, 75011 Paris, France",
+  user: ahmad
+)
+
+attend_lecture = Challenge.create!(
+  name: "Attend an event or lecture",
+  duration: 1,
+  description: "Attend an event or lecture about the environment!",
+  image: "lecture.png",
+  reward: 200,
+  address: "16 Villa Gaudelet, 75011 Paris, France",
+  user: ahmad
+)
+
+clean_neighborhood = Challenge.create!(
+  name: "Clean up your neigbourhood",
+  duration: 1,
+  description: "Clean up your neighborhood!",
+  image: "clean_up.png",
+  reward: 200,
+  address: "16 Villa Gaudelet, 75011 Paris, France",
+  user: ahmad
+)
 
 puts "Created basic challenges 'Plastic-free', 'Stay dark' and 'Leave your car at home'"
 

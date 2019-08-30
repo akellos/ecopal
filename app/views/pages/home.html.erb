@@ -1,9 +1,39 @@
-  <div class="banner" style="background-image: url(<%= image_path "background.png" %>)">
-    <div class="pal pal-landing" style="background-image: url(<%= image_path "pal.png" %>)">
+
+  <div class="background" style="background-image: url(<%= image_path "background_water.png" %>)">
+      <div class="banner">
+        <div class="pal pal-landing" style="background-image: url(<%= image_path "pal.png" %>)">
+        </div>
+        <div class="bubble bubble-landing at-item">
+          <p>Hi there!</p>
+          <p>Please scroll down...</p>
+        </div>
+        <div id="clouds">
+          <div class="cloud x1"></div>
+          <div class="cloud x1_5"></div>
+          <div class="cloud x2"></div>
+          <div class="cloud x4"></div>
+          <div class="cloud x5"></div>
+
+        </div>
+        <div class="app-name-container">
+          <h2 id="app-name">ecopal</h2>
+          <h3 id="app-slogan">save the planet one challenge at a time</h3>
+        </div>
+        <%= link_to "START", challenges_path, class: "grey-btn btn-landing" %>
     </div>
-    <div class="bubble bubble-landing at-item">
-      <p>Hi there!</p>
-      <p>Please scroll down...</p>
+    <div class="about">
+      <div class="about-cards">
+        <div class="card-category">
+          Let's save the planet
+        </div>
+
+        <div class="card-category">
+          Score points on your way
+        </div>
+
+        <div class="card-category">
+          Invite your friends
+        </div>
+      </div>
     </div>
-    <%= link_to "START", challenges_path, class: "grey-btn btn-landing" %>
   </div>
