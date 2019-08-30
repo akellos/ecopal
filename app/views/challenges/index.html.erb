@@ -1,11 +1,18 @@
-<h1>List of Challenges</h1>
+<h1 class = "index-page-title">Choose a challenge</h1>
 
+<div class="cards">
 <% @challenges.each do |challenge| %>
-<ul>
-  <li><%= link_to challenge.name, challenge_path(challenge) %></li>
-
-</ul>
+<div class="card">
+  <div class="image-container">
+   <%= image_tag challenge.image, alt: challenge.name %>
+   </div>
+   <div class="image-text">
+  <%= link_to challenge.name, challenge_path(challenge) %>
+</div>
+  </div>
   <% end %>
-
+</div>
 <br>
- <%= link_to "create a challenge", new_challenge_path %>
+<div class = "index-page-button">
+  <%= link_to "create a challenge", new_challenge_path %>
+</div>
