@@ -1,0 +1,68 @@
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+}
+
+.dashboard-col {
+  background: linear-gradient(rgba(138, 214, 242, 0.1), rgba(198, 228, 239, 0.1));
+  width: 600px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  padding: 12px;
+}
+
+.progress-card {
+    background-color: #fff;
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(black, .15);
+    height: 330px;
+    width: 426px;
+    transition: 0.5s;
+    margin: 18px;
+
+
+    &:hover {
+        -webkit-transform: translateY(-0.5rem) scale(1.03);
+                transform: translateY(-0.5rem) scale(1.03);
+    }
+}
+
+.profile-card {
+  background-color: #F4F8F9;
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(black, .15);
+    height: 280px;
+    width: 426px;
+    transition: 0.5s;
+    margin: 18px;
+}
+.progress-card-status {
+  background-color: rgb(103, 229, 190);
+}
+
+.challenge-image {
+  width: 375px;
+  height: 200px;
+  background-color: pink;
+  margin-bottom: 10px;
+}
+
+.avatar-profile {
+  border-radius: 90px;
+  z-index: 2000;
+}
+
+.profile-name {
+  text-align: center;
+}
+

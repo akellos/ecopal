@@ -1,0 +1,33 @@
+  <div>
+    <% if current_user == @user %>
+
+        <% @trackers.each do |tracker| %>
+
+            <%= tracker.challenge.name %>
+            <% tracker.time.each do |day| %>
+            <div class="grey-btn-container">
+              <div class="grey-btn"><%= day %></div>
+            <% end %>
+            </div>
+          </div>
+
+        <% end %>
+      </div>
+    <% else %>
+    <% end %>
+  </div>
+
+
+<script>
+  const greyButtons = document.querySelectorAll(".grey-btn");
+  console.log(greyButtons);
+
+  const changeButtonsOnClick = (event) => {
+    console.log(event);
+    event.target.classList.toggle("active");
+  };
+
+  greyButtons.forEach((el) => {
+    el.addEventListener("click", changeButtonsOnClick);
+  });
+</script>
