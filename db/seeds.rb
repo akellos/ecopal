@@ -127,7 +127,7 @@ five_minute_shower = Challenge.create!(
 
 watch_documentary = Challenge.create!(
   name: "Watch a documentary",
-  duration: 30,
+  duration: 1,
   description: "Watch a documentary about the environment. Our suggestion: 'Blue planet'!",
   image: "tv.png",
   reward: 200,
@@ -157,7 +157,7 @@ no_meat = Challenge.create!(
 
 attend_lecture = Challenge.create!(
   name: "Attend an event or lecture",
-  duration: 30,
+  duration: 1,
   description: "Attend an event or lecture about the environment!",
   image: "lecture.png",
   reward: 200,
@@ -167,7 +167,7 @@ attend_lecture = Challenge.create!(
 
 clean_neighborhood = Challenge.create!(
   name: "Clean up your neigbourhood",
-  duration: 30,
+  duration: 1,
   description: "Clean up your neighborhood!",
   image: "clean_up.png",
   reward: 200,
