@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 2019_08_30_151208) do
   create_table "trackers", force: :cascade do |t|
     t.bigint "challenge_id"
     t.bigint "user_id"
-    t.boolean "completed"
+    t.boolean "completed", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "time", default: [], array: true
