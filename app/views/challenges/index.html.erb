@@ -1,11 +1,42 @@
-<h1>List of Challenges</h1>
+  <h1 class = "index-page-title">Choose a challenge <%= image_tag "ecopal_marker.png" %></h1>
 
+
+
+<div class="cards">
 <% @challenges.each do |challenge| %>
-<ul>
-  <li><%= link_to challenge.name, challenge_path(challenge) %></li>
-
-</ul>
+  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+      <div class="flipper">
+          <div class="front">
+             <div class="card">
+                <div class="image-container">
+                  <% if challenge.image.nil? || challenge.image.empty? %>
+                   <%= cl_image_tag challenge.photo, alt: challenge.name %>
+                   <% else %>
+                   <%= image_tag challenge.image %>
+                  <% end %>
+                </div>
+                <div class="image-text">
+                    <%= link_to challenge.name, challenge_path(challenge) %>
+                </div>
+              </div>
+          </div>
+          <div class="back">
+              <div class="card">
+                <div class="image-container" id = "image-container-flip">
+                  <div class = "flip-text">
+                      <p> <%= challenge.trackers.count %> ecopals are participating in this challenge!</p>
+                    </div>
+                </div>
+                <div class="image-text">
+                    <%= link_to "Find out more!", challenge_path(challenge) %>
+                </div>
+              </div>
+          </div>
+      </div>
+  </div>
   <% end %>
-
+</div>
 <br>
- <%= link_to "create a challenge", new_challenge_path %>
+<div class = "index-page-button">
+  <%= link_to "create a challenge", new_challenge_path %>
+</div>

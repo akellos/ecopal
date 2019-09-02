@@ -1,25 +1,38 @@
-<h1><%= @challenge.name %></h1>
+ <h1 class = "challenge-show-title"><%= @challenge.name %></h1>
 
-<%= cl_image_tag @challenge.image, height: 300, width: 400, crop: :fill %>
+<div class="challenge-show-page">
+  <div class="challenge-show-container">
+    <div class="challenge-show-image">
+      <%= image_tag @challenge.image, height: 300, width: 400, crop: :fill %>
+    </div>
+    <div class="challenge-details">
+      <p> <%= @challenge.description %></p>
+      <p> Duration: <%= pluralize @challenge.duration, "day" %></p>
 
-<p><%= link_to "", dashboard_path  %></p>
-<%= link_to edit_challenge_path(@challenge) do %>
-  Edit
-<% end %>
+      <p> You can earn up to <%= @challenge.reward %> points</p>
+       <%= simple_form_for [@challenge, Tracker.new] do |f| %>
+    <%= f.button :submit, "join", class: "btn-primary btn-challenge", id: "btn-booking" %>
+  <% end %>
 
- <%= simple_form_for [@challenge, Tracker.new] do |f| %>
-  <%= f.button :submit, "JOIN", class: "btn-primary", id: "btn-booking" %>
-<% end %>
+      </div>
+  </div>
 
-<h3>Challenge participants:</h3>
-<% @participants.each do |participant| %>
-  <p><%= link_to participant.user.name, dashboard_path(user:participant.id) %></p>
-  <% end  %>
 
-<div
-  id="map"
-  style="width: 50%;
-  height: 480px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
+  <div class="show-container">
+    <div class = "participants">
+    <h3 class = "challenge-show-ecopals">Ecopals who joined this challenge:</h3>
+    <% @participants.each do |participant| %>
+      <p class = "participant-list"><%= link_to participant.user.name, dashboard_path(user:participant.id) %></p>
+      <% end  %>
+      </div>
+
+    <div
+      id="map"
+      style="width: 50%;
+      border-radius: 10px;
+      height: 480px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
+  </div>
+</div>
