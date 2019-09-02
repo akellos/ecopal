@@ -1,5 +1,8 @@
-<h1>new challenge</h1>
-<br>
+<div class="form-wrapper" style="background-image: url(<%= image_path "trees.jpg" %>)"></div>
+<div class="form-container-challenge">
+  <div class="form-image-challenge">
+  </div>
+  <br>
 <div class="challenge-form">
   <%= simple_form_for @challenge,  wrapper: :vertical_form do |f| %>
     <%= f.input :name, placeholder: 'Enter a name for your challenge', label: false %>
