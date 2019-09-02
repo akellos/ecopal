@@ -37,6 +37,13 @@
   <% end %>
 </div>
 <br>
+
+<div class="leaderboard">
+  <% @top_five_users.each do |user| %>
+    <p> <%= user.name %> score: <%= user.score %></p>
+    <% end  %>
+  </div>
+
 <div class = "index-page-button">
   <%= link_to "create a challenge", new_challenge_path %>
 </div>

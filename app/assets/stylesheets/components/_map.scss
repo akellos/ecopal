@@ -7,3 +7,13 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+#info-window {
+  width: 200px;
+  height: 200px;
+  overflow-y: scroll;
+}
+
+#info-window-avatar img {
+  width: 40px;
+  border-radius: 50%;
+}
