@@ -32,6 +32,7 @@ end
     @challenge = Challenge.new(challenge_params)
     @user = current_user
     @challenge.user = @user
+    @challenge.image = params[:image]
     authorize @challenge
     if @challenge.save
       redirect_to challenges_path

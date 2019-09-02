@@ -1,9 +1,14 @@
 .form-container-challenge {
-  width: 420px;
-  box-shadow: $box-shadow;
+  width: 650px;
   padding: 20px;
-  margin: 12px;
-  z-index: 2000;
+}
+
+.challenge-container {
+  width: 800px;
   background-color: #6FC4A9;
-  opacity: 0.69;
+  z-index: 2000;
+  opacity: 0.8;
+  box-shadow: $box-shadow;
+  margin-top: 30px;
+  display: flex;
 }
