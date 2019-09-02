@@ -1,7 +1,9 @@
 <div class="dashboard-container">
   <div class="dashboard-col">
       <h3>My challenges</h3>
-      <%= link_to "add as friend", friendships_path(user: @user) , method: :post  %>
+      <% if !@user.list_friends.map(&:sender).include?(current_user) && @user != current_user %>
+        <%= link_to "add as friend", friendships_path(user: @user) , method: :post  %>
+      <% end %>
       <% if current_user == @user %>
         <% @trackers.each do |tracker| %>
        <div class="progress-card">
@@ -41,7 +43,7 @@
       <br>
         <% @user.list_friends.each do |friendship|%>
           <div class="card-friendship">
-            <%= friendship.sender.name %>
+            <%= link_to friendship.sender.name, dashboard_path(user: @user.id == friendship.sender_id ? friendship.recipient_id : friendship.sender_id) %>
           </div>
         <% end %>
       </div>
