@@ -128,16 +128,61 @@
 .leaderboard {
   padding-top: 10px;
   padding-left: 20px;
+
+  table {
+    width: 100%;
+
+    tr {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      th {
+        width: 100%;
+        text-align: left;
+        font-size: 12px;
+
+        a {
+          color: black;
+        }
+
+        img {
+          width: 30px;
+        }
+      }
+
+      th:last-of-type {
+        color: #cdcdcd;
+      }
+    }
+
+    tr:not(:last-of-type) {
+      padding-bottom: 7px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #eaeaea;
+    }
+  }
 }
 
 .top-five {
-  padding: 30px;
-  background-color: #86d0ba;
+  padding: 16px;
+  background-color: white;
+  box-shadow: $box-shadow;
+
 }
 
 .top-five h4 {
-  color: hsl(50, 100%, 53%);
+  padding-bottom: 7px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid;
+  font-size: 16px;
   font-weight: bold;
+  color: hsl(50, 100%, 53%);
+
+  img {
+    margin-right: 10px;
+    height: 15px;
+  }
 }
 
 .row-top-five {

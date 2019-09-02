@@ -45,20 +45,17 @@
 
   <div class="leaderboard">
     <div class="top-five">
-      <h4>Leaderboard</h4>
-        <table>
+      <h4><%= image_tag "crowns.png" %> Leaderboard</h4>
+      <table>
+        <% @top_five_users.each do |user| %>
           <tr>
-            <th>User</th>
-            <th>Points</th>
+            <th class = "avatar"><%= cl_image_tag user.image %></th>
+            <th><%= link_to user.name, dashboard_path(user: user.id) %></th>
+            <th><%= user.score %></th>
           </tr>
-            <% @top_five_users.each do |user| %>
-                <tr>
-                  <th class = "avatar"><%= cl_image_tag user.image %><%= link_to user.name, dashboard_path(user: user.id) %></th>
-                  <th><%= user.score %></th>
-                </tr>
-            <% end %>
-        </table>
-      </div>
+        <% end %>
+      </table>
+    </div>
   </div>
 
 </div>
