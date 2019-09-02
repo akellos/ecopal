@@ -1,36 +1,30 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  grid-gap: 50px;
+  grid-row-gap: 140px;
 }
 
 .card {
-  margin: 20px;
+  margin: 10px;
   box-shadow: $box-shadow;
+  height: 400px;
 }
-
-.card:hover {
-  transform: scale(1.07);
-}
-
 
 .image-container {
   padding: 10px;
   border-style: solid;
-  margin: 10px;
+  margin: 20px;
   border-width: 0.1px;
   border-color: rgba(0,0,0, 0.3);
   background-color: hsl(50, 100%, 52%);
   display: flex;
   justify-content: center;
-}
-
-.image-container:hover {
-  background-color: hsl(162, 44%, 67%);
+  height: 300px;
 }
 
 .image-container img {
-  width: 75%;
+  width: 125%;
 }
 
 .image-text {
@@ -43,10 +37,11 @@
 .image-text a {
   text-decoration: none;
   color: grey;
+  font-weight: bold;
 }
-.image-text a:hover {
- color: hsl(162, 44%, 67%);
-}
+// .image-text a:hover {
+//  color: hsl(162, 44%, 67%);
+// }
 
 .index-page-title {
   padding-top: 35px;
@@ -63,7 +58,7 @@
   background-color: hsl(183, 68%, 89%);
   margin-bottom: 20px;
   border-radius: 5px;
-  margin-top: 25px;
+  margin-top: 130px;
   margin-bottom: 40px;
 }
 
@@ -73,10 +68,96 @@
   font-size: 20px;
 }
 
-.index-page-button:hover {
-  transform: scale(1.07);
+#image-container-flip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: hsl(162, 44%, 67%);
+}
+
+#image-container-flip p {
+  color: grey;
+  font-weight: bold;
+  font-size: 18px;
+
+}
+
+/* entire container, keeps perspective */
+.flip-container {
+    perspective: 1000;
+}
+    /* flip the pane when hovered */
+    .flip-container:hover .flipper, .flip-container.hover .flipper {
+        transform: rotateY(180deg);
+    }
+
+.flip-container, .front, .back {
+    width: 320px;
+    height: 300px;
+}
+
+/* flip speed goes here */
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+
+    position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+    backface-visibility: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+    z-index: 2;
+    /* for firefox 31 */
+    transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+    transform: rotateY(180deg);
 }
 
 
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
 
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
 
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
