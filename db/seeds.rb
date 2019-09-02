@@ -45,7 +45,8 @@ puts 'Creating 20 random users...'
     name: Faker::Name.name,
     email: Faker::Internet.email,
     image: "https://thispersondoesnotexist.com",
-    password: Faker::Internet.password(min_length: 8)
+    password: Faker::Internet.password(min_length: 8),
+    location: ["London", "Berlin", "Paris", "Manchester", "Madrid", "Glasgow", "Dublin"].sample,
   )
 end
 
@@ -57,33 +58,39 @@ lila = User.create!(
   name: "Lila",
   email: "lila@mail.com",
   password: "654321",
-  image: "https://media.licdn.com/dms/image/C4D03AQHdVHM4w0BcWQ/profile-displayphoto-shrink_800_800/0?e=1571875200&v=beta&t=f2MWy86MWC_-744stDXsk61lcfxak7BUAwIArJ_Tw_M"
+  image: "https://media.licdn.com/dms/image/C4D03AQHdVHM4w0BcWQ/profile-displayphoto-shrink_800_800/0?e=1571875200&v=beta&t=f2MWy86MWC_-744stDXsk61lcfxak7BUAwIArJ_Tw_M",
+  location: "London"
 )
 
 evia = User.create!(
   name: "Evia",
   email: "evia@mail.com",
   password: "654321",
-  image: "https://media.licdn.com/dms/image/C5603AQHTICoQhwGqLQ/profile-displayphoto-shrink_800_800/0?e=1571875200&v=beta&t=V8Cl6Ehq9N9u6UqgEMNjLTrULvXcN9xunKr7HujF9RA"
+  image: "https://media.licdn.com/dms/image/C5603AQHTICoQhwGqLQ/profile-displayphoto-shrink_800_800/0?e=1571875200&v=beta&t=V8Cl6Ehq9N9u6UqgEMNjLTrULvXcN9xunKr7HujF9RA",
+  location: "London",
 )
 
 ahmad = User.create!(
   name: "Ahmad",
   email: "ahmad@mail.com",
   password: "654321",
-  image: "https://media.licdn.com/dms/image/C5603AQEtT7Jj-y0DUg/profile-displayphoto-shrink_800_800/0?e=1571875200&v=beta&t=DiiHmfRPAMocHGh_Zqrrf4w6vL_PABoXndUO1acCrAk"
+  image: "https://media.licdn.com/dms/image/C5603AQEtT7Jj-y0DUg/profile-displayphoto-shrink_800_800/0?e=1571875200&v=beta&t=DiiHmfRPAMocHGh_Zqrrf4w6vL_PABoXndUO1acCrAk",
+  location: "Paris",
 )
 
 moritz = User.create!(
   name: "Moritz",
   email: "moritz@mail.com",
   password: "654321",
-  image: "https://lindenpartners.eu/wp-content/uploads/2015/03/indenhuck-author.jpg"
+  image: "https://lindenpartners.eu/wp-content/uploads/2015/03/indenhuck-author.jpg",
+  location: "Berlin",
 )
 
 puts 'Created "Lila", "Evia", "Ahmad" and "Moritz"'
 
-puts "Creating basic challenges: "
+
+
+puts "Creating basic challenges:"
 
 plastic_free = Challenge.create!(
   name: "Plastic-free",
@@ -105,7 +112,7 @@ stay_dark = Challenge.create!(
   user: moritz
 )
 
-stay_dark = Challenge.create!(
+no_car = Challenge.create!(
   name: "Leave your car at home",
   duration: 30,
   description: "Run, Forrest, Run!",
@@ -115,6 +122,111 @@ stay_dark = Challenge.create!(
   user: ahmad
 )
 
+five_minute_shower = Challenge.create!(
+  name: "Take 5-minute showers",
+  duration: 30,
+  description: "Save water!",
+  image: "shower.png",
+  reward: 200,
+  address: "16 Villa Gaudelet, 75011 Paris, France",
+  user: ahmad
+)
 
-puts "Created basic challenges 'Plastic-free', 'Stay dark' and 'Leave your car at home'"
+watch_documentary = Challenge.create!(
+  name: "Watch a documentary",
+  duration: 1,
+  description: "Watch a documentary about the environment. Our suggestion: 'Blue planet'!",
+  image: "tv.png",
+  reward: 200,
+  address: "16 Villa Gaudelet, 75011 Paris, France",
+  user: ahmad
+)
+
+reusable_bags = Challenge.create!(
+  name: "Ditch plastic bags!",
+  duration: 30,
+  description: "Ditch plastic bags, use reusable ones!",
+  image: "paper_bag.png",
+  reward: 200,
+  address: "16 Villa Gaudelet, 75011 Paris, France",
+  user: ahmad
+)
+
+no_meat = Challenge.create!(
+  name: "Go vegetarian!",
+  duration: 30,
+  description: "Replace steak with broccoli!",
+  image: "no_meat.png",
+  reward: 200,
+  address: "16 Villa Gaudelet, 75011 Paris, France",
+  user: ahmad
+)
+
+attend_lecture = Challenge.create!(
+  name: "Attend an event or lecture",
+  duration: 1,
+  description: "Attend an event or lecture about the environment!",
+  image: "lecture.png",
+  reward: 200,
+  address: "16 Villa Gaudelet, 75011 Paris, France",
+  user: ahmad
+)
+
+clean_neighborhood = Challenge.create!(
+  name: "Clean up your neigbourhood",
+  duration: 1,
+  description: "Clean up your neighborhood!",
+  image: "clean_up.png",
+  reward: 200,
+  address: "16 Villa Gaudelet, 75011 Paris, France",
+  user: ahmad
+)
+
+puts "Created basic challenges 'Plastic-free', 'Stay dark' and 'Leave your car at home' and more..."
+
+
+puts "Creating Users who joined a challenge..."
+
+tom = User.create!(
+  name: "Tom",
+  email: "tom@mail.com",
+  password: "654321",
+  image: "https://media.licdn.com/dms/image/C4D03AQHdVHM4w0BcWQ/profile-displayphoto-shrink_800_800/0?e=1571875200&v=beta&t=f2MWy86MWC_-744stDXsk61lcfxak7BUAwIArJ_Tw_M",
+  location: "Dublin"
+)
+
+luke = User.create!(
+  name: "Luke",
+  email: "luke@mail.com",
+  password: "654321",
+  image: "https://media.licdn.com/dms/image/C5603AQHTICoQhwGqLQ/profile-displayphoto-shrink_800_800/0?e=1571875200&v=beta&t=V8Cl6Ehq9N9u6UqgEMNjLTrULvXcN9xunKr7HujF9RA",
+  location: "Madrid",
+)
+
+sue = User.create!(
+  name: "Sue",
+  email: "sue@mail.com",
+  password: "654321",
+  image: "https://media.licdn.com/dms/image/C5603AQEtT7Jj-y0DUg/profile-displayphoto-shrink_800_800/0?e=1571875200&v=beta&t=DiiHmfRPAMocHGh_Zqrrf4w6vL_PABoXndUO1acCrAk",
+  location: "Paris",
+)
+
+kate = User.create!(
+  name: "kate",
+  email: "kate@mail.com",
+  password: "654321",
+  image: "https://images.unsplash.com/photo-1503185912284-5271ff81b9a8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
+  location: "Berlin",
+)
+
+@tracker_users = [sue, luke, tom, moritz, evia, lila, ahmad]
+@challenges = [plastic_free, stay_dark, no_car, five_minute_shower, watch_documentary, reusable_bags, no_meat, attend_lecture, clean_neighborhood]
+
+@tracker_users.each do |user|
+  @challenges.each do |challenge|
+    Tracker.create!(user: user, challenge: challenge)
+  end
+end
+
+puts "Created basic challenges."
 
