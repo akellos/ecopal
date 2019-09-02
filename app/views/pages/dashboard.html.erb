@@ -23,6 +23,9 @@
       <div class="profile-card">
       <%= cl_image_tag @user.image, height: 180, width: 180, crop: :fill, class: "avatar-profile" %>
       <p class="profile-name"><%= @user.name %></p>
+      <% if policy(@user).edit? %>
+        <%= link_to "edit profile", edit_user_registration_path %>
+      <% end %>
       </div>
       <div class="profile-card">
         <p>Badges</p>
@@ -32,21 +35,23 @@
       <% end %>
       </div>
       <div class="profile-card">
-        Friends
+        <div class="friends ml-3 my-3">
+    <h4>My Friends</h4>
+      <br>
+        <% @user.list_friends.each do |friendship|%>
+          <div class="card-friendship">
+            <%= friendship.sender.name %>
+          </div>
+        <% end %>
       </div>
-      <% if policy(@user).edit? %>
-        <%= link_to "edit profile", edit_user_registration_path %>
-      <% end %>
     </div>
   </div>
   </div>
  </div>
 
-      <h3><%= current_user.name %>'s challenges</h3>
 
 <%#= cl_image_tag @user.image, %>
 
-      <h3><%= current_user.name %>'s challenges</h3>
 
 <!-- Add this later, removed to fix demo day <%#= cl_image_tag @user.image, %> -->
 <!-- after @user.image, "height: 300, width: 400, crop: :fill" -->
