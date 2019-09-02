@@ -10,8 +10,11 @@ puts 'Cleaning database...'
 
 Achievement.destroy_all
 # Badge.destroy_all
+Tracker.destroy_all
 Challenge.destroy_all
+Friendship.destroy_all
 User.destroy_all
+
 
 if Badge.all.length == 0
   puts "Creating basic badges."
