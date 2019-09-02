@@ -17,3 +17,7 @@
   width: 40px;
   border-radius: 50%;
 }
+
+.mapboxgl-marker {
+  z-index: 0 !important;
+}

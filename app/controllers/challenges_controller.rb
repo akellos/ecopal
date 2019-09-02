@@ -18,7 +18,7 @@ end
   def index
     @users = User.all
     @sorted_users = @users.sort_by { |user| -user.score }
-    @top_five_users = @sorted_users.first(5)
+    @top_five_users = @sorted_users.first(10)
     @challenges = policy_scope(Challenge)
   end
 
