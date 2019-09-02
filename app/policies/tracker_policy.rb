@@ -11,7 +11,11 @@ class TrackerPolicy < ApplicationPolicy
   end
 
   def show?
-    return true
+    user_is_owner?
+  end
+
+  def update_tracker_days?
+    user_is_owner?
   end
 
   def update?

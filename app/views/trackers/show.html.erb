@@ -1,0 +1,111 @@
+<h1>Hi</h1>
+<div>
+  <% if current_user == @user %>
+    <h2>Your Challenge: <%= @tracker.challenge.name%> </h2>
+      <% counter = 0 %>
+<%= link_to "submit", challenge_tracker_path(@challenge, pending: @tracker.pending), method: :patch, id: "my-submit"  %>
+  <div class="grey-btn" id="save-progress">
+    Submit
+  </div>
+  <br><br>
+      <% @tracker.time.each do |day| %>
+
+          <div class="grey-btn" data-day="<%= day %>" data-index="<%= counter %>">
+            <%= day %>
+          </div>
+
+        <% counter += 1 %>
+      <% end %>
+  <% else %>
+  <% end %>
+</div>
+<div class="d-flex flex-wrap">
+
+<% @tracker.tracker_days.each do |day| %>
+   <span class="border p-3 m-2">
+     <%= day.date %>
+     <% if day.completed %>
+        <i class="fas fa-check"></i>
+     <% end %>
+   </span>
+<% end %>
+</div>
+<%= simple_form_for :update_tracker_days, url: update_tracker_days_path, method: :patch do |f| %>
+  <%#= f.input :days, collection: @tracker.tracker_days.map(&:date), as: :check_boxes %>
+  <% @tracker.tracker_days.map(&:date).each do |day| %>
+    <div class="form-check"><input class="form-check-input check_boxes required" type="checkbox" value="<%= day %>" name="update_tracker_days[days][]" id="update_tracker_days_days_<%= day %>"><label class="collection_check_boxes" for="update_tracker_days_days_<%= day %>"><%= day %></label></div>
+  <% end %>
+  <%= f.submit %>
+<% end %>
+
+
+
+<script>
+
+  let myPending = <%= @tracker.pending.to_json.html_safe %>;
+    // console.log(myPending)
+
+  const saveButton = document.getElementById('save-progress')
+  const mySubmitButton = document.getElementById('my-submit')
+
+  const greyButtons = document.querySelectorAll(".grey-btn");
+  // console.log(greyButtons);
+
+  const changeButtonsOnClick = (event) => {
+    const item = event.target
+    console.log("bofore", myPending);
+
+    if (item.classList.contains("active")) {
+      item.classList.remove("active");
+      myPending[event.path[0].dataset.index] = item.innerText;
+      let old = mySubmitButton.attributes.href.value
+      let newOne = old + `&updated%5B%5D=${item.innerText}`
+      mySubmitButton.setAttribute('href', newOne)
+
+    } else {
+      item.classList.add("active");
+      const foundIndex = myPending.findIndex(elementString => elementString == item.innerText);
+      myPending[foundIndex] = "SELECTED";
+
+      let myRegex = new RegExp(`&?updated%5B%5D=${item.innerText}`, "i");
+      let old = mySubmitButton.attributes.href.value
+      let newOne = old.replace(myRegex, "")
+      mySubmitButton.setAttribute('href', newOne)
+
+      // mySubmitButton.attributes.href.value.replace(myRegex, "HELLO!!")
+      // myPending.splice(parseInt(event.path[0].dataset.index), 1)
+    }
+    console.log("after", myPending);
+  };
+
+  const removeDayOnClick = (event) => {
+    console.log(event);
+    event.target.remove();
+  };
+
+  greyButtons.forEach((el) => {
+    el.addEventListener("click", changeButtonsOnClick);
+  });
+
+  const saveProgressOnClick = (event) => {
+
+  };
+
+  saveButton.addEventListener("click", saveProgressOnClick);
+  mySubmitButton.addEventListener("click", saveProgressOnClick);
+
+
+</script>
+
+
+http://localhost:3000/challenges/1/trackers/64?updated%5B%5D=2019-09-02&updated%5B%5D=2019-09-03&updated%5B%5D=2019-09-04&updated%5B%5D=2019-09-05&updated%5B%5D=2019-09-06&updated%5B%5D=2019-09-07&updated%5B%5D=2019-09-08&updated%5B%5D=2019-09-09&updated%5B%5D=2019-09-10&updated%5B%5D=2019-09-11&updated%5B%5D=2019-09-12&updated%5B%5D=2019-09-13&updated%5B%5D=2019-09-14&updated%5B%5D=2019-09-15&updated%5B%5D=2019-09-16&updated%5B%5D=2019-09-17&updated%5B%5D=2019-09-18&updated%5B%5D=2019-09-19&updated%5B%5D=2019-09-20&updated%5B%5D=2019-09-21&updated%5B%5D=2019-09-22
+
+
+updated%5B%5D=2019-09-02
+
+mySubmitButton.attributes.href.value.replace(/updated%5B%5D=${item.innerText}/g, "")
+
+
+
+
+
