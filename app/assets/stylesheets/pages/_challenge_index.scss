@@ -2,7 +2,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
-  grid-row-gap: 140px;
+  // grid-row-gap: 140px;
+  margin-bottom: 40px;
 }
 
 .card {
@@ -93,7 +94,7 @@
 
 .flip-container, .front, .back {
     width: 320px;
-    height: 300px;
+    height: 400px;
 }
 
 /* flip speed goes here */
@@ -185,12 +186,17 @@
   }
 }
 
-.row-top-five {
-  backgroundcolor: red;
-}
-
 .index-page-flex {
   display: flex;
+}
+
+.index-page-title a {
+  text-decoration: none;
+  color: hsl(161, 42%, 68%);
+}
+
+.index-page-title a:hover {
+  color: #ef8686;
 }
 
 // Smallest device
