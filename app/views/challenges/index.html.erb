@@ -11,7 +11,7 @@
         <div class="flipper">
             <div class="front">
                <div class="card">
-                  <div class="image-container">
+                  <div class="image-container" style="background-color: <%= challenge.bg_color %>">
                     <% if challenge.image.nil? || challenge.image.empty? %>
                      <%= cl_image_tag challenge.photo, alt: challenge.name %>
                      <% else %>
@@ -25,7 +25,7 @@
             </div>
             <div class="back">
                 <div class="card">
-                  <div class="image-container" id = "image-container-flip">
+                  <div class="image-container" id = "image-container-flip" style="background-color: <%= challenge.bg_color %>">
                     <div class = "flip-text">
                         <p> <%= challenge.trackers.count %> ecopals are participating in this challenge!</p>
                       </div>
