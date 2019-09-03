@@ -13,9 +13,9 @@
                <div class="card">
                   <div class="image-container" style="background-color: <%= challenge.bg_color %>">
                     <% if challenge.image.nil? || challenge.image.empty? %>
-                     <%= cl_image_tag challenge.photo, alt: challenge.name %>
+                     <%= cl_image_tag challenge.photo, alt: challenge.name, loading: 'lazy'  %>
                      <% else %>
-                     <%= image_tag challenge.image %>
+                     <%= image_tag challenge.image, loading: 'lazy'%>
                     <% end %>
                   </div>
                   <div class="image-text">
@@ -56,7 +56,6 @@
       </table>
     </div>
   </div>
-
 </div>
 
 

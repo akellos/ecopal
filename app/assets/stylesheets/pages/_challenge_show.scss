@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 60px;
+  width: 90%;
 }
 
 .challenge-show-title {
@@ -16,12 +17,17 @@
   opacity: 0.5;
 }
 
+.show-grid {
+  margin: 15px;
+}
+
 
 .challenge-show-image {
   padding: 30px;
   background-color: hsl(162, 44%, 67%);
   box-shadow: $box-shadow;
   border-radius: 8px;
+  text-align: center;
 }
 
 .challenge-details {
