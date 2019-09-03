@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_30_151208) do
+ActiveRecord::Schema.define(version: 2019_09_02_155919) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,15 @@ ActiveRecord::Schema.define(version: 2019_08_30_151208) do
     t.index ["sender_id"], name: "index_friendships_on_sender_id"
   end
 
+  create_table "tracker_days", force: :cascade do |t|
+    t.string "date"
+    t.boolean "completed", default: false
+    t.bigint "tracker_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tracker_id"], name: "index_tracker_days_on_tracker_id"
+  end
+
   create_table "trackers", force: :cascade do |t|
     t.bigint "challenge_id"
     t.bigint "user_id"
@@ -102,6 +111,7 @@ ActiveRecord::Schema.define(version: 2019_08_30_151208) do
   add_foreign_key "challenges", "users"
   add_foreign_key "friendships", "users", column: "recipient_id"
   add_foreign_key "friendships", "users", column: "sender_id"
+  add_foreign_key "tracker_days", "trackers"
   add_foreign_key "trackers", "challenges"
   add_foreign_key "trackers", "users"
 end

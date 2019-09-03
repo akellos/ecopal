@@ -1,5 +1,9 @@
-<h1>new challenge</h1>
-<br>
+<div class="form-wrapper" style="background-image: url(<%= image_path "trees.jpg" %>)"></div>
+<div class="challenge-container">
+<div class="form-container-challenge">
+  <div class="form-image-challenge">
+  </div>
+  <br>
 <div class="challenge-form">
   <%= simple_form_for @challenge,  wrapper: :vertical_form do |f| %>
     <%= f.input :name, placeholder: 'Enter a name for your challenge', label: false %>
@@ -8,9 +12,17 @@
      <%= f.input :end_date, as: :date, placeholder: 'When does your challenge end?', label: false %>
       <%= f.input :address, placeholder: 'Where does your challenge take place?', label: false %>
       <%= f.input :description, placeholder: 'Tell us about your challenge', label: false %>
-      <%= f.input :photo %>
-      <%= f.input :photo_cache, as: :hidden %>
     </div>
-    <%= f.button :submit, "create your challenge" %>
+
+</div>
+      <div class="challenge-image-container">
+      <% ['no_meat_sm.png', 'no_plastic_sm.png', 'no_plastic_bag_sm.png', 'dark_sm.png'].each do |img|  %>
+        <%= image_tag img, alt: "alttext" %>
+        <%= radio_button_tag :image, img %>
+      <% end %>
+
+      <%= f.button :submit, "create your challenge" %>
   <% end %>
+
+      </div>
 </div>

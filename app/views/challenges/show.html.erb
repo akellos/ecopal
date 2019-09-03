@@ -22,7 +22,7 @@
     <div class = "participants">
     <h3 class = "challenge-show-ecopals">Ecopals who joined this challenge:</h3>
     <% @participants.each do |participant| %>
-      <p class = "participant-list"><%= link_to participant.user.name, dashboard_path(user:participant.id) %></p>
+      <p class = "participant-list"><%= link_to participant.user.name, dashboard_path(user:participant.user_id) %></p>
       <% end  %>
       </div>
 

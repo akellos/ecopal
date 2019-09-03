@@ -1,17 +1,18 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
+  skip_after_action :verify_authorized
 
   def home
   end
 
   def dashboard
-    @user_badge = Badge.check(current_user)
-    @badges = current_user.badges
     if params[:user]
       @user = User.find(params[:user])
     else
       @user = current_user
     end
+    @user_badge = Badge.check(@user)
+    @badges = @user.badges
     @trackers = @user.trackers
     # @number_of_days = number_of_days_passed(@user)
     # @list_of_days = ((@user.last_sign_in_at.to_date - rand(5))..(Date.today))

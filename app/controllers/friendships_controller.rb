@@ -13,13 +13,15 @@ class FriendshipsController < ApplicationController
     #   end
     # end
 
-    if params[:friendship][:recipient_id].present?
+    if params[:friendship].present?
       sender_friendship = Friendship.new(sender: User.find(current_user.id), recipient: User.find(params[:friendship][:recipient_id]), status: "pending")
       recipient_friendship = Friendship.new(sender: User.find(params[:friendship][:recipient_id]), recipient: User.find(current_user.id), status: "pending")
-
-      outcome = sender_friendship.save && recipient_friendship.save
+    else
+      sender_friendship = Friendship.new(sender: User.find(current_user.id), recipient: User.find(params[:user]), status: "pending")
+      recipient_friendship = Friendship.new(sender: User.find(params[:user]), recipient: User.find(current_user.id), status: "pending")
     end
 
+      outcome = sender_friendship.save && recipient_friendship.save
     if outcome
       flash[:notice] = 'New FRIEND!!!'
     else

@@ -2,19 +2,23 @@ class ChallengesController < ApplicationController
   def show
     @challenge = Challenge.find(params[:id])
 
-    @participants = @challenge.trackers
-    @markers = @participants.map do |participant|
+    @participants = @challenge.trackers.map { |tracker| tracker.user }
+    @unique_participants = @participants.uniq { |participant| participant.location }
+    @markers = @unique_participants.map do |participant|
       {
-        lat: participant.user.latitude,
-        lng: participant.user.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { participant: participant })
+        lat: participant.latitude,
+        lng: participant.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { location: participant.location })
       }
-
     end
+    @participants = @challenge.trackers #used to fix show page
     authorize @challenge
 end
 
   def index
+    @users = User.all
+    @sorted_users = @users.sort_by { |user| -user.score }
+    @top_five_users = @sorted_users.first(10)
     @challenges = policy_scope(Challenge)
   end
 
@@ -28,6 +32,7 @@ end
     @challenge = Challenge.new(challenge_params)
     @user = current_user
     @challenge.user = @user
+    @challenge.image = params[:image]
     authorize @challenge
     if @challenge.save
       redirect_to challenges_path

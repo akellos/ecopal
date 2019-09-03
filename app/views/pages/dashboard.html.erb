@@ -1,73 +1,78 @@
 <div class="dashboard-container">
   <div class="dashboard-col">
-
-      <h3>My challenges</h3>
-      <% if current_user == @user %>
-        <% @trackers.each do |tracker| %>
-       <div class="progress-card">
-          <div class="challenge-image">
-            <%= cl_image_tag tracker.challenge.image, height: 180, width: 180, crop: :fill %>
-          </div>
-          <h3 class="heading-tertiary">
-             <%= tracker.challenge.name %>
-          </h3>
-            <p class="progress-card-status">
-              Progress
-            </p>
-        </div>
-            <% end %>
-    </div>
+    <h3><%= @user.name %>'s challenges</h3>
+      <% if !@user.list_friends.map(&:sender).include?(current_user) && @user != current_user %>
+        <%= link_to "add as friend", friendships_path(user: @user) , method: :post  %>
+      <% end %>
+    <!-- Add this later, removed to fix demo day <%#= cl_image_tag @user.image, %> -->
+    <!-- after @user.image, "height: 300, width: 400, crop: :fill" -->
+    <% if current_user == @user %>
+      <div class="">
+        <h3>My challenges</h3>
+        <% if !@user.list_friends.map(&:sender).include?(current_user) && @user != current_user %>
+          <%= link_to "add as friend", friendships_path(user: @user) , method: :post  %>
+        <% end %>
+        <% if current_user == @user %>
+          <% @trackers.each do |tracker| %>
+            <div class="progress-card">
+              <div class="challenge-image">
+                <% if tracker.challenge.image.nil? || tracker.challenge.image.empty? %>
+                  <%= cl_image_tag tracker.challenge.photo, alt: tracker.challenge.name, height: 180, width: 180, crop: :fill %>
+                <% else %>
+                  <%= image_tag tracker.challenge.image %>
+                <% end %>
+              </div>
+              <h3 class="heading-tertiary">
+                <%= tracker.challenge.name %>
+              </h3>
+              <p class="progress-card-status">
+                Progress
+              </p>
+            </div>
           <% end %>
-
+        <% end %>
+      </div>
+    <% end %>
+  </div>
   <div class="dashboard-col">
     <div class="user-profile">
       <div class="profile-card">
-      <%= cl_image_tag @user.image, height: 180, width: 180, crop: :fill, class: "avatar-profile" %>
-      <p class="profile-name"><%= @user.name %></p>
+        <%= cl_image_tag @user.image, height: 180, width: 180, crop: :fill, class: "avatar-profile" %>
+        <p class="profile-name"><%= @user.name %></p>
       </div>
       <div class="profile-card">
         <p>Badges</p>
-      <% @badges.each do |badge| %>
-      <%= badge.title %>
-      <%= image_tag badge.icon, width: 100, height: 100 %>
-      <% end %>
+        <% @badges.each do |badge| %>
+          <%= badge.title %>
+          <%= image_tag badge.icon, width: 100, height: 100 %>
+        <% end %>
       </div>
       <div class="profile-card">
         Friends
+      <br>
+        <% @user.list_friends.each do |friendship|%>
+          <div class="card-friendship">
+            <%= link_to friendship.sender.name, dashboard_path(user: @user.id == friendship.sender_id ? friendship.recipient_id : friendship.sender_id) %>
+          </div>
+        <% end %>
       </div>
       <% if policy(@user).edit? %>
         <%= link_to "edit profile", edit_user_registration_path %>
       <% end %>
     </div>
   </div>
-  </div>
- </div>
-
+</div>
 <%#= cl_image_tag @user.image, %>
-
-
-
 <!-- Add this later, removed to fix demo day <%#= cl_image_tag @user.image, %> -->
 <!-- after @user.image, "height: 300, width: 400, crop: :fill" -->
-
-
-
 <script>
   const greyButtons = document.querySelectorAll(".grey-btn");
   console.log(greyButtons);
-
   const changeButtonsOnClick = (event) => {
     console.log(event);
     event.target.classList.toggle("active");
   };
-
-
-
-
-
   greyButtons.forEach((el) => {
     el.addEventListener("click", changeButtonsOnClick);
   });
 </script>
-
-

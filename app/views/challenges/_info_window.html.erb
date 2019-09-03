@@ -1,4 +1,10 @@
+<div id="info-window">
+  <% participants = @challenge.trackers.map { |tracker| tracker.user } %>
+  <% participants_in_city = participants.select { |participant| participant.location == location } %>
+  <% participants_in_city.each do |participant| %>
+    <h4 id = "info-window-avatar"> <%= cl_image_tag participant.image %> <%= link_to participant.name,
+    dashboard_path(user: participant.id) %> </h4>
+  <% end %>
+</div>
 
-  <h2><%= participant.user.name %></h2>
-  <p><%= participant.user.location %></p>
 

@@ -1,8 +1,9 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 50px;
-  grid-row-gap: 140px;
+  grid-gap: 20px;
+  // grid-row-gap: 140px;
+  margin-bottom: 40px;
 }
 
 .card {
@@ -58,7 +59,6 @@
   background-color: hsl(183, 68%, 89%);
   margin-bottom: 20px;
   border-radius: 5px;
-  margin-top: 130px;
   margin-bottom: 40px;
 }
 
@@ -94,7 +94,7 @@
 
 .flip-container, .front, .back {
     width: 320px;
-    height: 300px;
+    height: 400px;
 }
 
 /* flip speed goes here */
@@ -126,6 +126,78 @@
     transform: rotateY(180deg);
 }
 
+.leaderboard {
+  padding-top: 10px;
+  padding-left: 20px;
+
+  table {
+    width: 100%;
+
+    tr {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      th {
+        width: 100%;
+        text-align: left;
+        font-size: 12px;
+
+        a {
+          color: black;
+        }
+
+        img {
+          width: 30px;
+        }
+      }
+
+      th:last-of-type {
+        color: #cdcdcd;
+      }
+    }
+
+    tr:not(:last-of-type) {
+      padding-bottom: 7px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #eaeaea;
+    }
+  }
+}
+
+.top-five {
+  padding: 16px;
+  background-color: white;
+  box-shadow: $box-shadow;
+
+}
+
+.top-five h4 {
+  padding-bottom: 7px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid;
+  font-size: 16px;
+  font-weight: bold;
+  color: hsl(50, 100%, 53%);
+
+  img {
+    margin-right: 10px;
+    height: 15px;
+  }
+}
+
+.index-page-flex {
+  display: flex;
+}
+
+.index-page-title a {
+  text-decoration: none;
+  color: hsl(161, 42%, 68%);
+}
+
+.index-page-title a:hover {
+  color: #ef8686;
+}
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
