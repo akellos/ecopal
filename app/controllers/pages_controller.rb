@@ -14,8 +14,9 @@ class PagesController < ApplicationController
     @user_badge = Badge.check(@user)
     @badges = @user.badges
     @trackers = @user.trackers
-    @friendships = Friendship.where(sender: current_user).or(Friendship.where(recipient: current_user))
-    @sorted_friends = @friendships.sort_by { |friend| friend.sender == current_user ? -friend.recipient.score : -friend.sender.score }
+    @friendships = Friendship.where(sender: current_user)
+    @friends = @friendships.map(&:recipient) << current_user
+    @sorted_friends = @friends.sort_by { |friend| -friend.score }
     @top_five_friends = @sorted_friends.first(10)
     # @number_of_days = number_of_days_passed(@user)
     # @list_of_days = ((@user.last_sign_in_at.to_date - rand(5))..(Date.today))

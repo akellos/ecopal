@@ -57,18 +57,12 @@
             <h4><%= image_tag "crowns.png" %> Leaderboard</h4>
             <table>
               <% @top_five_friends.each do |friend| %>
-              <% friend.sender == current_user ? active = friend.recipient : active = friend.sender %>
               <tr>
-                <th class = "avatar"><%= cl_image_tag active.image %></th>
-                <th><%= link_to active.name, dashboard_path(user: active.id) %></th>
-                <th><%= active.score %></th>
+                <th class = "avatar"><%= cl_image_tag friend.image %></th>
+                <th><%= link_to friend.name, dashboard_path(user: friend.id) %></th>
+                <th><%= friend.score %></th>
               </tr>
               <% end %>
-              <tr>
-                <th class = "avatar"><%= cl_image_tag current_user.image %></th>
-                <th><%= link_to current_user.name, dashboard_path(user: current_user.id) %></th>
-                <th><%= current_user.score %></th>
-              </tr>
             </table>
           </div>
         </div>
