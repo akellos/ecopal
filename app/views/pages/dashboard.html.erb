@@ -34,7 +34,6 @@
       </div>
     <% end %>
   </div>
-
   <div class="dashboard-col">
     <div class="user-profile">
       <div class="profile-card">
@@ -50,6 +49,12 @@
       </div>
       <div class="profile-card">
         Friends
+      <br>
+        <% @user.list_friends.each do |friendship|%>
+          <div class="card-friendship">
+            <%= link_to friendship.sender.name, dashboard_path(user: @user.id == friendship.sender_id ? friendship.recipient_id : friendship.sender_id) %>
+          </div>
+        <% end %>
       </div>
       <% if policy(@user).edit? %>
         <%= link_to "edit profile", edit_user_registration_path %>
@@ -57,18 +62,12 @@
     </div>
   </div>
 </div>
-
 <%#= cl_image_tag @user.image, %>
-
-
-
 <!-- Add this later, removed to fix demo day <%#= cl_image_tag @user.image, %> -->
 <!-- after @user.image, "height: 300, width: 400, crop: :fill" -->
-
 <script>
   const greyButtons = document.querySelectorAll(".grey-btn");
   console.log(greyButtons);
-
   const changeButtonsOnClick = (event) => {
     console.log(event);
     event.target.classList.toggle("active");
@@ -77,17 +76,3 @@
     el.addEventListener("click", changeButtonsOnClick);
   });
 </script>
-
-    <h4>My Friends</h4>
-      <br>
-        <% @user.list_friends.each do |friendship|%>
-          <div class="card-friendship">
-            <%= link_to friendship.sender.name, dashboard_path(user: @user.id == friendship.sender_id ? friendship.recipient_id : friendship.sender_id) %>
-          </div>
-        <% end %>
-
-
-
-
-
-
