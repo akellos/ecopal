@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background-color: transparent !important
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -20,9 +20,24 @@
 }
 
 .navbar-brand {
-  padding-left: 25px;
+  display: flex;
+  margin-left: 25px;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
   font-family: 'Sniglet', extra-bold;
   font-weight: 800;
+  font-size: 24px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: white !important;
+  color: #D1F4F7 !important;
+}
+
+.navbar-brand a {
+  width: auto;
+  height: auto;
 }
 
 .navbar-brand img {
