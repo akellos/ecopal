@@ -1,0 +1,18 @@
+.form-container-edit {
+  width: 850px;
+  padding: 50px;
+  height: 450px;
+  display: flex;
+  justify-content: space-around;
+  background-color: #A9E68F;
+  z-index: 2000;
+  opacity: 1;
+}
+
+.form-wrapper-edit-profile {
+  height: 100%;
+  width: 100%;
+  opacity: 0.2;
+  position: absolute;
+  filter: blur(4px);
+}
