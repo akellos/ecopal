@@ -49,6 +49,7 @@ class TrackersController < ApplicationController
     @tracker = Tracker.find(params[:id])
     authorize(@tracker)
     @user = @tracker.user
+    @weekdays = Date::ABBR_DAYNAMES
 
     @challenge = @tracker.challenge
   end
