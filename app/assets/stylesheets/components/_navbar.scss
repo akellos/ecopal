@@ -5,6 +5,7 @@
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  background-color: transparent !important
 }
 
 .navbar-lewagon .navbar-brand img {
@@ -20,6 +21,8 @@
 
 .navbar-brand {
   padding-left: 25px;
+  font-family: 'Sniglet', extra-bold;
+  font-weight: 800;
 }
 
 .navbar-brand img {
