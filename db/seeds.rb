@@ -195,7 +195,7 @@ dumitru = User.create!(
   name: "Dumitru",
   email: "dumitru@mail.com",
   password: "654321",
-  image: "https://avatars0.githubusercontent.com/u/45913976?v=4",
+  image: "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/jx51bsw0dyfx3ln2mf1v.jpg",
   location: "Bucharest",
   score: 600,
   bio: "Hi everyone! I am on the exciting journey to save the planet. Add me to your friends' list, and let's see who will get more points!"

@@ -1,7 +1,6 @@
 class ChallengesController < ApplicationController
   def show
     @challenge = Challenge.find(params[:id])
-
     @participants = @challenge.trackers.map { |tracker| tracker.user }
     @unique_participants = @participants.uniq { |participant| participant.location }
     @markers = @unique_participants.map do |participant|
@@ -12,6 +11,7 @@ class ChallengesController < ApplicationController
       }
     end
     @participants = @challenge.trackers #used to fix show page
+    @random_participants = @participants.sample(6)
     authorize @challenge
 end
 
