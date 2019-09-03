@@ -7,12 +7,12 @@
       <% end %>
     <!-- Add this later, removed to fix demo day <%#= cl_image_tag @user.image, %> -->
     <!-- after @user.image, "height: 300, width: 400, crop: :fill" -->
-    <% if current_user == @user %>
+
       <div class="">
         <% if !@user.list_friends.map(&:sender).include?(current_user) && @user != current_user %>
           <%= link_to "add as friend", friendships_path(user: @user) , method: :post  %>
         <% end %>
-        <% if current_user == @user %>
+
           <% @trackers.each do |tracker| %>
             <div class="progress-card">
               <div class="challenge-image">
@@ -32,9 +32,9 @@
               </button>
             </div>
           <% end %>
-        <% end %>
+
       </div>
-    <% end %>
+
   </div>
   <div class="dashboard-col">
     <div class="user-profile">
