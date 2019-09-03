@@ -19,21 +19,21 @@ User.destroy_all
 if Badge.all.length == 0
   puts "Creating basic badges."
   bronze = Badge.create!(
-    milestone: 10,
+    milestone: 400,
     title: "Bronze",
     icon: "bronze.png")
 
   silver = Badge.create!(
-    milestone: 30,
+    milestone: 800,
     title: "Silver",
     icon: "silver.png")
 
   gold = Badge.create!(
-    milestone: 60,
+    milestone: 1600,
     title: "Gold",
     icon: "gold.png")
   rookie = Badge.create!(
-    milestone: 0,
+    milestone: 100,
     title: "Rookie",
     icon: "rookie.png"
   )
@@ -518,7 +518,9 @@ puts "Creating basic challenges:"
 plastic_free = Challenge.create!(
   name: "Plastic-free",
   duration: 20,
-  description: "Ready to take the Plastic Free challenge? We will help you to keep motivated during the challenge. Users enjoy reading stories from our participants and other news from our global movement. Get the latest plastic-free ideas (don’t worry – we won’t spam you or pass your email address onto anyone else). Together we can make a difference and be a part of the solution.",
+  description: "Plastic bottles, disposable coffee cups, single-use take-away packaging, cling film, plastic sandwich bags… ditch all of those for 20 days!
+  Sadly, every day around 8 million pieces of plastic find their way into our oceans. You might be surprised but recently scientists discovered microplastics
+  embedded deep in the Arctic ice! Join this challenge and be part of the solution!",
   image: "no_plastic.png",
   reward: 1000,
   address: "Unit 13, 138 Kingsland Rd, London E2 8DY",
@@ -528,7 +530,7 @@ plastic_free = Challenge.create!(
 stay_dark = Challenge.create!(
   name: "Stay dark",
   duration: 10,
-  description: "Try to get by without electricity. That also means: No Netflix!",
+  description: "Reducing energy use limits the number of carbon emissions in the environment. Carbon emissions play a significant role in climate change. With billions of harmful emissions in the atmosphere, cutting back is always a good thing. Try to get by without electricity. That also means: No Netflix!",
   image: "dark.png",
   reward: 500,
   address: "Rudi-Dutschke-Straße 26, 10969 Berlin, Germany",
@@ -538,7 +540,8 @@ stay_dark = Challenge.create!(
 no_car = Challenge.create!(
   name: "Leave your car at home",
   duration: 20,
-  description: "Run, Forrest, Run!",
+  description: "Car pollution is one of the major causes of global warming. The chemicals that vehicles emit also affect the air, soil and water quality.
+  Take out your bicycle & join this challenge!",
   image: "bike.png",
   reward: 1000,
   address: "16 Villa Gaudelet, 75011 Paris, France",
@@ -548,9 +551,11 @@ no_car = Challenge.create!(
 five_minute_shower = Challenge.create!(
   name: "Take 5-minute showers",
   duration: 25,
-  description: "Save water!",
+  description: "Clean, fresh water is a limited resource. While almost 70 percent of the Earth is made up of water, many parts of the world suffer from clean water shortage.
+  Conserving water is important because it keeps water pure and clean while protecting the environment.
+  We suggest, join this challenge & start taking short 5-minute showers!",
   image: "shower.png",
-  reward: 200,
+  reward: 1250,
   address: "16 Villa Gaudelet, 75011 Paris, France",
   user: ahmad
 )
@@ -560,7 +565,7 @@ watch_documentary = Challenge.create!(
   duration: 1,
   description: "Watch a documentary about the environment. Our suggestion: 'Blue planet'!",
   image: "tv.png",
-  reward: 200,
+  reward: 50,
   address: "16 Villa Gaudelet, 75011 Paris, France",
   user: ahmad
 )
@@ -568,19 +573,22 @@ watch_documentary = Challenge.create!(
 reusable_bags = Challenge.create!(
   name: "Ditch plastic bags!",
   duration: 30,
-  description: "Ditch plastic bags, use reusable ones!",
+  description: "Did you know that worldwide, about 2 million plastic bags are used every minute? You might be surprised, but the average time that a plastic bag is used for is … 12 minutes! We say, ditch plastic bags! Just carry a reusable one in your bag & be awesome! ",
   image: "paper_bag.png",
-  reward: 200,
+  reward: 1500,
   address: "16 Villa Gaudelet, 75011 Paris, France",
   user: ahmad
 )
 
 no_meat = Challenge.create!(
-  name: "Go vegetarian!",
-  duration: 30,
-  description: "Replace steak with broccoli!",
+  name: "Go vegan!",
+  duration: 14,
+  description: "Switching from a meat-based diet to a diet based on whole grains,
+  fruits and vegetables reduces water and land use, lowers pollution,
+  slows deforestation and reduces destruction of topsoil, to name a few benefits.
+  Join this challenge, and replace steak with broccoli for 14 days!",
   image: "no_meat.png",
-  reward: 200,
+  reward: 700,
   address: "16 Villa Gaudelet, 75011 Paris, France",
   user: ahmad
 )
@@ -588,19 +596,19 @@ no_meat = Challenge.create!(
 attend_lecture = Challenge.create!(
   name: "Attend an event or lecture",
   duration: 1,
-  description: "Attend an event or lecture about the environment!",
+  description: "Educate yourself, and attend an event or lecture about the environment!",
   image: "lecture.png",
-  reward: 200,
+  reward: 50,
   address: "16 Villa Gaudelet, 75011 Paris, France",
   user: ahmad
 )
 
 clean_neighborhood = Challenge.create!(
-  name: "Clean up your neigbourhood",
+  name: "Clean up your neighbourhood",
   duration: 1,
-  description: "Clean up your neighborhood!",
+  description: "Set a good example to your neighbours, clean up the trash in your neighborhood!",
   image: "clean_up.png",
-  reward: 200,
+  reward: 50,
   address: "16 Villa Gaudelet, 75011 Paris, France",
   user: ahmad
 )
