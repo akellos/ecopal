@@ -1,10 +1,21 @@
+.challenge-show-page {
+  // display: flex;
+  // justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 60px;
+}
+
 .challenge-show-title {
   padding-top: 35px;
   padding-bottom: 25px;
-  font-size: 45px;
+  font-size: 70px;
   color: grey;
-  font-weight: bold;
+  font-family: 'Sniglet', extra-bold;
+  color: #E55137;
+  opacity: 0.5;
 }
+
 
 .challenge-show-image {
   padding: 30px;
@@ -13,44 +24,51 @@
   border-radius: 8px;
 }
 
-.challenge-show-container {
-  display: flex;
-}
-
-.challenge-show-container div {
-  margin: 30px;
+.challenge-details {
+  background-color: hsl(192, 25%, 92%);
+  border-radius: 10px;
+  padding: 20px;
   color: grey;
 }
 
-.btn-challenge {
-  background-color: hsl(88, 47%, 53%);
-  border-color: none;
-  border-width: 0;
+.challenge-details p {
+  font-family: 'Sniglet', extra-bold;
 }
 
-
-.challenge-show-ecopals {
-  color: grey;
-  font-size: 22px;
-  padding-left: 30px;
-  padding-right: 130px;
-  font-weight: bold;
-}
-
-.show-container {
+.participants {
   display: flex;
-  width: 100%;
-  margin-top: 25px;
-  margin-bottom: 25px;
-}
-
-#map {
-  margin-top: 10px;
+  background-color: hsl(192, 25%, 92%);
+  border-radius: 10px;
+  padding: 15px;
+  color: grey;
+  margin-bottom: 35px;
 }
 
 .participant-list {
-  padding-left: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-left: 20px;
 }
 
+.show-name {
+  text-decoration: none;
+  font-family: 'Sniglet', extra-bold;
+  color: grey;
+}
+
+.challenge-show-ecopals {
+  font-size: 35px;
+  font-weight: bold;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-top: 20px;
+  font-family: 'Sniglet', extra-bold;
+  color: #E55137;
+  opacity: 0.5;
+}
+
+#map {
+  margin-bottom: 35px;
+}
+
+.show-name  {
+  padding-left: 15px;
+}

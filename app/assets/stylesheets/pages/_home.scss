@@ -66,6 +66,8 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
   align-content: center;
+  max-width: 1140px;
+  margin: 0 auto;
 }
 
 .card-category {
@@ -74,6 +76,7 @@
   background-position: center;
   height: 180px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   color: #939393;
@@ -84,6 +87,16 @@
   background: #FFFFFF;
   opacity: 0.8;
   font-size: 12px;
+
+      &:hover {
+        -webkit-transform: translateY(-0.5rem) scale(1.03);
+                transform: translateY(-0.5rem) scale(1.03);
+    }
+
+  span {
+    font-size: 18px;
+    margin-top: 16px;
+  }
 }
 
 // Smallest device

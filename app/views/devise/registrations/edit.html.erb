@@ -1,9 +1,13 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="form-wrapper-edit-profile" style="background-image: url(<%= image_path "sky.jpg" %>)"></div>
+<br>
+<h2 class="heading-tertiary">Edit my profile</h2>
+<br>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
+<div class="form-container-edit">
 
-  <div class="form-inputs">
+  <div class="form-inputs-edit-1">
     <%= f.input :email, required: true, autofocus: true %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -21,20 +25,22 @@
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
+  </div>
+  <div class="form-inputs-edit-1">
     <%= f.input :bio,
                  hint: "Tell your fellow ecopals about yourself" %>
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>
 
-  </div>
 
   <div class="form-actions">
     <%= f.button :submit, "Update" %>
+<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<%= link_to "Back", :back %>
   </div>
 <% end %>
+</div>
 
-<h3>Cancel my account</h3>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+</div>
