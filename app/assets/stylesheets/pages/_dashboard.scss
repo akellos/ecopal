@@ -48,6 +48,19 @@
     margin: 18px;
 }
 
+.profile-card-friends {
+  background-color: #F4F8F9;
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(black, .15);
+    height: 440px;
+    width: 426px;
+    transition: 0.5s;
+    margin: 18px;
+}
+
 .progress-button {
   background-color: rgb(103, 229, 190);
   color: #808080;
@@ -105,6 +118,7 @@
 
 .edit-profile-text {
   text-align: center;
+  font-size: 1rem;
 }
 
 .badge-text {

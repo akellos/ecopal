@@ -2,6 +2,7 @@ class FriendshipsController < ApplicationController
   protect_from_forgery with: :exception
   skip_after_action :verify_authorized
 
+
   def create
     # is this bulk addition or individual addition?
     # if params.include?(:friend_id) #individual e.g. "Add friend" link
@@ -35,4 +36,6 @@ class FriendshipsController < ApplicationController
     Friendship.destroy_recriprocal_for_ids(current_user.id, params[:friend_id])
     redirect_to(request.referer)
   end
+
+
 end
