@@ -5,7 +5,7 @@
         </div>
         <div class="bubble bubble-landing at-item">
           <p>Hi there!</p>
-          <p>Please scroll down...</p>
+          <p>Please scroll down... or <a href="#hello" data-scroll>click this</a></p>
         </div>
         <div id="clouds">
           <div class="cloud x1"></div>
@@ -15,7 +15,7 @@
           <div class="cloud x5"></div>
 
         </div>
-        <div class="app-name-container">
+        <div class="app-name-container" id="hello">
           <h2 id="app-name">ecopal</h2>
           <h3 id="app-slogan">save the planet one challenge at a time</h3>
         </div>
@@ -41,4 +41,9 @@
       </div>
     </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+
+  <script>
+    var scroll = new SmoothScroll('a[href*="#"]');
+  </script>
 <%= javascript_pack_tag "pal" %>
