@@ -1,8 +1,7 @@
 <div class="tracker-card">
-  <h1>Hi <%= current_user.name.capitalize %></h1>
   <div>
     <% if current_user == @user %>
-      <h2>Your progress for "<%= @tracker.challenge.name%>" </h2>
+      <h2> Your "<%= @tracker.challenge.name %>" progress tracker </h2>
     <% else %>
     <% end %>
   </div>
@@ -52,15 +51,25 @@
           <% end %>
 
 
-        <%= f.submit %>
+        <%= f.submit 'Save your progress', class: "button-tracker" %>
       </div>
     <% end %>
   </div>
 </div>
 
 
-
-
+<div class="tracker-pal">
+  <div class = "tracker-img">
+    <%= image_tag "form.png" %>
+  </div>
+    <div class="bubble">
+        <% if current_user == @user %>
+             <p>Hi <%= current_user.name.capitalize %>, mark your progress, but don't cheat!</p>
+        <% else %>
+            <p>Hi <%= current_user.name.capitalize %></p>
+          <% end %>
+    </div>
+</div>
 
 <script>
 

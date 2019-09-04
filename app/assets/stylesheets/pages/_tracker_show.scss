@@ -1,5 +1,19 @@
 .tracker-card {
   background-color: white;
+  padding: 30px;
+  margin-top: 160px;
+  margin-bottom: 60px;
+  box-shadow: $box-shadow;
+  border-radius: 10px;
+  position: relative;
+  text-align: center;
+  h2 {
+    padding-top: 22px;
+    padding-bottom: 30px;
+    color: #ea4b50;
+    font-weight: 400;
+    font-family: 'Sniglet', extra-bold;
+  }
 }
 
 .tracker-days {
@@ -17,4 +31,26 @@
 .checked {
   margin-right: 24px;
   color: #81BB30;
+}
+
+.button-tracker {
+  padding: 11px;
+  background-color: hsl(185, 68%, 89%);
+  border-color: hsl(185, 68%, 89%);
+  border-radius: 7px;
+  color: grey;
+  font-weight: 400;
+  font-family: 'Sniglet', extra-bold;
+}
+
+
+.tracker-pal {
+  position: absolute;
+  top: 20px;
+  right: 270px;
+  .bubble {
+    position: absolute;
+    top: 0;
+    left: 160px;
+  }
 }
