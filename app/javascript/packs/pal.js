@@ -8,7 +8,7 @@ window.addEventListener("scroll", (event) => {
   if (scrollTop > 715) {
     const bubble = document.querySelector(".bubble");
     bubble.style.position = "absolute";
-    bubble.style.top = "35.5%";
+    bubble.style.top = "35%";
     bubble.classList.add("hide");
   }
 });
