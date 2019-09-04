@@ -626,10 +626,50 @@ puts "Created basic challenges 'Plastic-free', 'Stay dark' and 'Leave your car a
 @challenges = [plastic_free, stay_dark, no_car, five_minute_shower, watch_documentary, reusable_bags, no_meat, attend_lecture, clean_neighborhood]
 
 @tracker_users.each do |user|
-  @challenges.each do |challenge|
+  @some_challenges = @challenges.sample(4)
+  @some_challenges.each do |challenge|
     Tracker.create!(user: user, challenge: challenge)
   end
 end
 
+
+
 puts "Created basic challenges."
+
+puts "Creating challenges for demo day!"
+
+@demo_tracker = Tracker.create(user: evia, challenge: plastic_free)
+
+demo_tracker_days = ((Date.today - 5)..(Date.today + 14)).to_a
+
+demo_tracker_days.each do |day|
+  TrackerDay.create(date: day.to_s, tracker: @demo_tracker)
+end
+
+puts "Created challeng for demo day!"
+puts "All set!!!"
+puts ""
+puts ""
+puts ""
+puts "GO"
+puts ""
+puts ""
+puts ""
+puts "TEAM"
+puts ""
+puts ""
+puts ""
+puts "ECOPAL"
+puts ""
+puts ""
+puts ""
+puts ""
+puts ""
+puts ""
+puts ""
+puts ""
+puts "GO, GO, GO!!!"
+puts ""
+puts ""
+puts ""
 
