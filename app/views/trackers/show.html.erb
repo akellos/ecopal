@@ -1,43 +1,62 @@
-<h1>Hi <%= current_user.name.capitalize %></h1>
-<div>
-  <% if current_user == @user %>
-    <h2>Your progress for "<%= @tracker.challenge.name%>" </h2>
-  <% else %>
-  <% end %>
-</div>
+<div class="tracker-card">
+  <h1>Hi <%= current_user.name.capitalize %></h1>
+  <div>
+    <% if current_user == @user %>
+      <h2>Your progress for "<%= @tracker.challenge.name%>" </h2>
+    <% else %>
+    <% end %>
+  </div>
 
-<div class="container">
-  <%= simple_form_for :update_tracker_days, url: update_tracker_days_path, method: :patch do |f| %>
-    <%#= f.input :days, collection: @tracker.tracker_days.map(&:date), as: :check_boxes %>
-    <div>
-        <div>
-        <% @tracker.tracker_days.sort_by{|a|a.date.to_date}.each do |day| %>
-          <div class="pretty p-switch p-fill">
-            <% if day.date.to_date <= Date.today && day.completed == false %>
-              <input class="form-check-input check_boxes required" type="checkbox" value="<%= day.date %>" name="update_tracker_days[days][]" id="update_tracker_days_days_<%= day.date %>"/>
-               <div class="state">
-                <label class="collection_check_boxes" for="update_tracker_days_days_<%= day.date %>">
+  <div class="container">
+    <%= simple_form_for :update_tracker_days, url: update_tracker_days_path, method: :patch do |f| %>
+      <%#= f.input :days, collection: @tracker.tracker_days.map(&:date), as: :check_boxes %>
+      <div class="tracker-days">
+
+          <% @tracker.tracker_days.sort_by{|a|a.date.to_date}.each do |day| %>
+
+              <div class="pretty p-switch p-fill days">
+
+
+                <% if day.date.to_date <= Date.today && day.completed == false %>
+                  <input class="form-check-input check_boxes required" type="checkbox" value="<%= day.date %>" name="update_tracker_days[days][]" id="update_tracker_days_days_<%= day.date %>"/>
+
+                   <div class="state">
+                    <label class="collection_check_boxes" for="update_tracker_days_days_<%= day.date %>">
+                        <%= @weekdays[day.date.to_date.wday]%>
+                        <%= day.date.to_date.day%>/<%= day.date.to_date.month%>
+                    </label>
+                  </div>
+                <% elsif day.date.to_date <= Date.today && day.completed == true %>
+                    <i class="fas fa-check-circle checked"></i>
                     <%= @weekdays[day.date.to_date.wday]%>
                     <%= day.date.to_date.day%>/<%= day.date.to_date.month%>
-                </label>
-              </div>
-            <% elsif  %>
-              <input class="form-check-input check_boxes required" type="checkbox" value="<%= day.date %>" name="update_tracker_days[days][]" id="update_tracker_days_days_<%= day.date %>" disabled/>
-               <div class="state">
-                <label class="collection_check_boxes" for="update_tracker_days_days_<%= day.date %>">
-                    <%= @weekdays[day.date.to_date.wday]%>
-                    <%= day.date.to_date.day%>/<%= day.date.to_date.month%>
-                </label>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
-        </div>
-      <%= f.submit %>
-    </div>
-  <% end %>
-</div>
 
+
+
+
+
+                <% elsif  %>
+                  <input class="form-check-input check_boxes required" type="checkbox" value="<%= day.date %>" name="update_tracker_days[days][]" id="update_tracker_days_days_<%= day.date %>" disabled/>
+
+                   <div class="state">
+                    <label class="collection_check_boxes" for="update_tracker_days_days_<%= day.date %>">
+                        <%= @weekdays[day.date.to_date.wday]%>
+                        <%= day.date.to_date.day%>/<%= day.date.to_date.month%>
+                    </label>
+                  </div>
+
+                <% end %>
+
+              </div>
+
+          <% end %>
+
+
+        <%= f.submit %>
+      </div>
+    <% end %>
+  </div>
+</div>
 
 
 
