@@ -74,7 +74,7 @@ evia = User.create!(
   name: "Evia",
   email: "evia@mail.com",
   password: "654321",
-  image: "https://media.licdn.com/dms/image/C5603AQHTICoQhwGqLQ/profile-displayphoto-shrink_800_800/0?e=1571875200&v=beta&t=V8Cl6Ehq9N9u6UqgEMNjLTrULvXcN9xunKr7HujF9RA",
+  image: "https://avatars0.githubusercontent.com/u/51849597?v=4",
   location: "London",
   score: 500,
   bio: "Hi everyone! I am on the exciting journey to save the planet. Add me to your friends' list, and let's see who will get more points!"
