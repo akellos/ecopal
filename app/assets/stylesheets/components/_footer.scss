@@ -9,6 +9,12 @@
   color: rgba(0,0,0,0.3);
   width: 100%;
 }
+
+.footer-bottom {
+  position: fixed;
+  bottom: 0;
+}
+
 .footer-links {
   display: flex;
   align-items: center;

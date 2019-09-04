@@ -1,34 +1,37 @@
-<div class="form-wrapper" style="background-image: url(<%= image_path "trees.jpg" %>)"></div>
-<div class="index-cloud-pal">
-  <div class="inform-pal">
-    <%= image_tag "form.png" %>
-    <div class="bubble" id = "bubble-index">
-      <p>Let's create a challenge!</p>
-    </div>
-  </div>
-<div class="challenge-container">
-<div class="form-container-challenge">
-  <div class="form-image-challenge">
-  </div>
-  <br>
-<div class="challenge-form">
-  <%= simple_form_for @challenge,  wrapper: :vertical_form do |f| %>
-    <%= f.input :name, placeholder: 'Enter a name for your challenge', label: false %>
-    <%= f.input :duration, placeholder: 'Enter the number of days your challenge takes place', label: false%>
-
-      <%= f.input :address, placeholder: 'Where does your challenge take place?', label: false %>
-      <%= f.input :description, placeholder: 'Tell us about your challenge', label: false %>
-    </div>
-
-</div>
-      <div class="challenge-image-container">
-      <% ['default_one_sm.png', 'default_two_sm.png', 'default_three_sm.png', 'default_four_sm.png'].each do |img|  %>
-        <%= image_tag img, alt: "alttext" %>
-        <%= radio_button_tag :image, img %>
-      <% end %>
-
-      <%= f.button :submit, "create your challenge" %>
-  <% end %>
-
+<div style="min-height: calc(100vh -182px)">
+  <div class="form-wrapper" style="background-image: url(<%= image_path "trees.jpg" %>)"></div>
+  <div class="index-cloud-pal">
+    <div class="inform-pal">
+      <%= image_tag "form.png" %>
+      <div class="bubble" id = "bubble-index">
+        <p>Let's create a challenge!</p>
       </div>
+    </div>
+  </div>
+  <div class="challenge-container">
+  <div class="form-container-challenge">
+    <div class="form-image-challenge">
+    </div>
+    <br>
+  <div class="challenge-form">
+    <%= simple_form_for @challenge,  wrapper: :vertical_form do |f| %>
+      <%= f.input :name, placeholder: 'Enter a name for your challenge', label: false %>
+      <%= f.input :duration, placeholder: 'Enter the number of days your challenge takes place', label: false%>
+
+        <%= f.input :address, placeholder: 'Where does your challenge take place?', label: false %>
+        <%= f.input :description, placeholder: 'Tell us about your challenge', label: false %>
+      </div>
+
+  </div>
+        <div class="challenge-image-container">
+        <% ['default_one_sm.png', 'default_two_sm.png', 'default_three_sm.png', 'default_four_sm.png'].each do |img|  %>
+          <%= image_tag img, alt: "alttext" %>
+          <%= radio_button_tag :image, img %>
+        <% end %>
+
+        <%= f.button :submit, "create your challenge" %>
+    <% end %>
+
+        </div>
+
 </div>
