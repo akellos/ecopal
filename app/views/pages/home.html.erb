@@ -19,11 +19,15 @@
           <h2 id="app-name">ecopal</h2>
           <h3 id="app-slogan">save the planet one challenge at a time</h3>
         </div>
-        <%= link_to "CHALLENGES", challenges_path, class: "grey-btn btn-landing" %>
-        <%= link_to "DASHBOARD", dashboard_path, class: "grey-btn btn-landing" %>
+        <div class="btn-landing">
+           <%= link_to "CHALLENGES", challenges_path, class: "grey-btn" %>
+           <%= link_to "DASHBOARD", dashboard_path, class: "grey-btn" %>
+           <a href="#cards-home" class="grey-btn">ABOUT</a>
+        </div>
     </div>
+
     <div class="about">
-      <div class="about-cards">
+      <div id="cards-home" class="about-cards">
         <div class="card-category" style="margin: 50px;">
           <%= image_tag "world.png", style:"height: 65%;" "padding-top: 10px;" %>
          <span>Let's save the planet</span>
