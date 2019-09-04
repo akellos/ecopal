@@ -17,6 +17,7 @@
   display: flex;
   background-size: cover;
   background-position: center;
+  flex-direction: column;
   height: calc(100vh - 156px);
   padding: 150px 0;
   margin: 0;
@@ -38,19 +39,19 @@
   font-family: 'Sniglet', extra-bold;
   font-weight: 400;
   font-size: 40px;
-  color: white;
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 .app-name-container {
   margin-top: 800px;
+  margin-bottom: 60px;
 }
 
 .about {
   background-size: cover;
   background-position: center;
   height: calc(100vh - 156px);
-  padding: 150px 40px;
+  padding: 30px 40px;
   margin: 0;
   text-align: center;
   justify-content: center;
@@ -85,7 +86,6 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   background: #FFFFFF;
-  opacity: 0.8;
   font-size: 12px;
 
       &:hover {
