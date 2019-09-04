@@ -16,7 +16,6 @@ skip_before_action :authenticate_user!, :only => [:index, :show]
     @not_participating = @participants.all? do |participant|
       participant.user != current_user
     end
-    # raise
     @random_participants = @participants.sample(6)
     authorize @challenge
 end
