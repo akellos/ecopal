@@ -33,9 +33,9 @@
 }
 
 .inform-pal {
-  position: fixed;
+  position: absolute;
   z-index: 10000;
-  top: 40px;
+  top: -7px;
 
   .bubble {
     top: 40px;

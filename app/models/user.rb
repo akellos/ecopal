@@ -16,6 +16,7 @@
   # has_many :friends, through: :friendships
 
   mount_uploader :photo, PhotoUploader
+  validates :photo, presence: true
 
   def list_friends
     Friendship.where(recipient: self)
