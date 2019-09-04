@@ -13,6 +13,10 @@ skip_before_action :authenticate_user!, :only => [:index, :show]
       }
     end
     @participants = @challenge.trackers #used to fix show page
+    @not_participating = @participants.all? do |participant|
+      participant.user != current_user
+    end
+    # raise
     @random_participants = @participants.sample(6)
     authorize @challenge
 end

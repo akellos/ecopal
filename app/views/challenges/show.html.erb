@@ -11,8 +11,12 @@
         <p> <%= @challenge.description %></p>
         <p class = "duration"> <%= image_tag "calendar.png" %> <%= pluralize @challenge.duration, "day" %></p>
         <p class = "points"> <%= image_tag "medal.png" %> <%= @challenge.reward %> points</p>
-        <%= simple_form_for [@challenge, Tracker.new] do |f| %>
-        <%= f.button :submit, "join", class: "grey-btn", id: "grey-btn-show" %>
+        <% if @not_participating %>
+          <%= simple_form_for [@challenge, Tracker.new] do |f| %>
+          <%= f.button :submit, "join", class: "grey-btn", id: "grey-btn-show" %>
+        <% end %>
+        <% else %>
+          <div></div>
         <% end %>
     </div>
     <div class = "participants">
