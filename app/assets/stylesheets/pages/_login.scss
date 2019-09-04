@@ -26,3 +26,20 @@
   width: 400px;
   background-color: #fff;
 }
+
+.pal-form {
+  z-index: 2000;
+  height: 20px;
+}
+
+.inform-pal {
+  position: fixed;
+  z-index: 10000;
+  top: 40px;
+
+  .bubble {
+    top: 40px;
+    position: absolute;
+    left: 180px;
+  }
+}

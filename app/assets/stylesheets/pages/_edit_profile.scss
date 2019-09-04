@@ -16,3 +16,31 @@
   position: absolute;
   filter: blur(4px);
 }
+
+.inform-pal-edit-profile {
+  position: fixed;
+  z-index: 10000;
+  top: 9px;
+}
+
+.bubble-edit-profile {
+  position: relative;
+  width: 245px;
+  height: 120px;
+  padding: 0px;
+  background: #FFFFFF;
+  -webkit-border-radius: 43px;
+  -moz-border-radius: 43px;
+  border-radius: 43px;
+  text-align: center;
+  display: block;
+  padding: 20px;
+  opacity: 0.8;
+  font-family: 'Press Start 2P';
+  font-size: 12px;
+  color: #939393;
+  top: -176px;
+  right: -171px;
+  // transition: all 2s ease;
+  opacity: 1;
+}
