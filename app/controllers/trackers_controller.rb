@@ -28,6 +28,9 @@ class TrackersController < ApplicationController
     tds = TrackerDay.where(date: days, tracker: @tracker)
     tds.each do |td|
       td.update(completed: true)
+      old_score = @tracker.user.score
+      new_score = @tracker.user.score + 50
+      @tracker.user.update(score: new_score)
     end
     authorize(@tracker)
     redirect_to challenge_tracker_path(@tracker)

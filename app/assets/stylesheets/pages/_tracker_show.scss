@@ -1,0 +1,20 @@
+.tracker-card {
+  background-color: white;
+}
+
+.tracker-days {
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+  grid-gap: 30px;
+}
+
+.days {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.checked {
+  margin-right: 24px;
+  color: #81BB30;
+}
