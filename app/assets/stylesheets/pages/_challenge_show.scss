@@ -11,10 +11,9 @@
   padding-top: 35px;
   padding-bottom: 25px;
   font-size: 70px;
-  color: grey;
   font-family: 'Sniglet', extra-bold;
-  color: #E55137;
-  opacity: 0.5;
+  font-weight: 800;
+  color: #f9abab;
 }
 
 .show-grid {
@@ -39,15 +38,14 @@
 }
 
 .challenge-details {
-  background-color: hsl(211, 68%, 82%);
+  background-color: white;
   border-radius: 10px;
   padding: 35px 45px 35px 45px;
   color: grey;
   font-size: 18px;
     h2 {
-      font-family: 'Sniglet', extra-bold;
-      color: hsl(356, 36%, 68%);
       font-weight: bold;
+      color: #ed8083;
   }
 }
 
@@ -57,11 +55,17 @@
 
 .participants {
   display: flex;
-  background-color: hsl(211, 68%, 82%);
+  background-color: white;
   border-radius: 10px;
   padding: 15px;
   color: grey;
   margin-bottom: 35px;
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    color: hsl(356, 36%, 68%);
+  }
 }
 
 .participant-list {
@@ -80,10 +84,27 @@
   padding-bottom: 15px;
   padding-left: 20px;
   padding-top: 20px;
-  font-family: 'Sniglet', extra-bold;
-  color: #E55137;
-  opacity: 0.5;
+  color: #ed8083;
 }
+
+.duration {
+  font-size: 20px;
+  img {
+  width: 35px;
+  margin-right: 9px;
+  }
+}
+
+
+
+.points {
+  font-size: 20px;
+   img {
+  width: 35px;
+  margin-right: 9px;
+ }
+}
+
 
 #map {
   margin-bottom: 35px;
@@ -91,4 +112,39 @@
 
 .show-name  {
   padding-left: 15px;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .challenge-show-page {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .challenge-show-page {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .challenge-show-page {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .challenge-show-page {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .challenge-show-page {
+    grid-template-columns: 1fr 1fr;
+  }
 }

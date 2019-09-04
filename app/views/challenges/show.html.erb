@@ -9,8 +9,8 @@
     <div class="challenge-details">
         <h2>Why join?</h2>
         <p> <%= @challenge.description %></p>
-        <p> Duration: <%= pluralize @challenge.duration, "day" %></p>
-        <p> You can earn up to <%= @challenge.reward %> points</p>
+        <p class = "duration"> <%= image_tag "calendar.png" %> <%= pluralize @challenge.duration, "day" %></p>
+        <p class = "points"> <%= image_tag "medal.png" %> <%= @challenge.reward %> points</p>
         <%= simple_form_for [@challenge, Tracker.new] do |f| %>
         <%= f.button :submit, "join", class: "grey-btn", id: "grey-btn-show" %>
         <% end %>

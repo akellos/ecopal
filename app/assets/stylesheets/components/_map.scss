@@ -11,6 +11,14 @@
   width: 200px;
   height: 200px;
   overflow-y: scroll;
+  a {
+    text-decoration: none;
+    color: rgb(108, 178, 156);
+    font-size: 18px;
+  }
+  a:hover {
+    font-size: 19px;
+  }
 }
 
 #info-window-avatar img {
@@ -21,3 +29,4 @@
 .mapboxgl-marker {
   z-index: 0 !important;
 }
+
