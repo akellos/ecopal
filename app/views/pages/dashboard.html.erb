@@ -28,10 +28,12 @@
         <h3 class="heading-tertiary">
         <%= tracker.challenge.name %>
         </h3>
+        <% if policy(@user).edit? %>
         <button class=progress-button>
         <p class="heading-tertiary">
           <%= link_to "check progress", challenge_tracker_path(tracker.challenge, tracker) %>
         </p>
+        <% end %>
         </button>
         <button class=progress-button>
         <p class="heading-tertiary">
