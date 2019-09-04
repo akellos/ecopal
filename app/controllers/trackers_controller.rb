@@ -24,7 +24,7 @@ class TrackersController < ApplicationController
 
   def update_tracker_days
     @tracker = Tracker.find(params[:id])
-    days = params[:update_tracker_days][:days].select {|date| !date.blank? }
+    days = params[:update_tracker_days][:days].select { |date| !date.blank? }
     tds = TrackerDay.where(date: days, tracker: @tracker)
     tds.each do |td|
       td.update(completed: true)
