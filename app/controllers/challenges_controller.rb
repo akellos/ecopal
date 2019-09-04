@@ -1,4 +1,6 @@
 class ChallengesController < ApplicationController
+skip_before_action :authenticate_user!, :only => [:index, :show]
+
   def show
     @challenge = Challenge.find(params[:id])
     @participants = @challenge.trackers.map { |tracker| tracker.user }
@@ -16,6 +18,7 @@ class ChallengesController < ApplicationController
 end
 
   def index
+    # skip_authorization
     @users = User.all
     @sorted_users = @users.sort_by { |user| -user.score }
     @top_five_users = @sorted_users.first(10)
