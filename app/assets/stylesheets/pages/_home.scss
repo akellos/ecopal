@@ -34,6 +34,7 @@
   opacity: 0.8;
 }
 
+
 #app-slogan {
   font-family: 'Sniglet', extra-bold;
   font-weight: 400;
@@ -42,6 +43,15 @@
   opacity: 0.8;
 }
 
+@media (min-width: 100px) and (max-width: 414px) {
+  #app-name {
+    font-size: 86px;
+  }
+  #app-slogan {
+    font-size: 21px;
+  }
+
+}
 .app-name-container {
   margin-top: 800px;
 }
