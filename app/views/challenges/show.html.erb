@@ -13,7 +13,7 @@
         <p class = "points"> <%= image_tag "medal.png" %> <%= @challenge.reward %> points</p>
         <% if @not_participating %>
           <%= simple_form_for [@challenge, Tracker.new] do |f| %>
-          <%= f.button :submit, "join", class: "grey-btn", id: "grey-btn-show" %>
+          <%= f.button :submit, "join", class: "yellow-btn", id: "yellow-btn-show" %>
         <% end %>
         <% else %>
           <div></div>

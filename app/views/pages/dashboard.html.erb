@@ -28,6 +28,20 @@
         <h3 class="heading-tertiary">
         <%= tracker.challenge.name %>
         </h3>
+
+        <div class="btn-wrapper">
+          <button class="yellow-btn" id="btn-dashboard">
+          <p class="heading-tertiary">
+            <%= link_to "Progress", challenge_tracker_path(tracker.challenge, tracker) %>
+          </p>
+          </button>
+          <button class="yellow-btn" id="btn-dashboard">
+          <p class="heading-tertiary">
+            <%= link_to "Details", challenge_path(tracker.challenge) %>
+          </p>
+          </button>
+        </div>
+
         <% if policy(@user).edit? %>
         <button class=progress-button>
         <p class="heading-tertiary">
@@ -40,6 +54,7 @@
           <%= link_to "see challenge", challenge_path(tracker.challenge) %>
         </p>
         </button>
+
       </div>
       <% end %>
     </div>
