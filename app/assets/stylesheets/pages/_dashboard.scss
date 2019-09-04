@@ -1,3 +1,9 @@
+#btn-dashboard {
+  margin: 4px;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 56px;
+}
 
 .dashboard-container {
   display: grid;
@@ -37,7 +43,7 @@
     text-align: center;
     border-radius: 3px;
     box-shadow: 0 1.5rem 4rem rgba(black, .15);
-    height: 330px;
+    height: 360px;
     width: 426px;
     transition: 0.5s;
     margin: 18px;
@@ -47,6 +53,13 @@
         -webkit-transform: translateY(-0.5rem) scale(1.03);
                 transform: translateY(-0.5rem) scale(1.03);
     }
+}
+
+.btn-wrapper {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .alarm {
@@ -82,12 +95,7 @@
 }
 
 .progress-button {
-  background-color: rgb(103, 229, 190);
-  color: #808080;
-  font-size: 1.1rem;
   height: 45px;
-  border-radius: 12px;
-  padding: 7px;
   margin-top: 4px;
 }
 
