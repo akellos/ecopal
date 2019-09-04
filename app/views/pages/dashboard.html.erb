@@ -1,6 +1,6 @@
 <div class="form-wrapper-dashboard" style="background-image: url(<%= image_path "sky.jpg" %>)"></div>
 <div class="dashboard-container">
-  <div class="dashboard-col">
+  <div class="dashboard-col-challenges">
     <h3 class="heading-secondary"><%= @user.name %>'s challenges</h3>
     <% if !@user.list_friends.map(&:sender).include?(current_user) && @user != current_user %>
     <%= link_to "add as friend", friendships_path(user: @user) , method: :post  %>
@@ -25,6 +25,11 @@
         <button class=progress-button>
         <p class="heading-tertiary">
           <%= link_to "check progress", challenge_tracker_path(tracker.challenge, tracker) %>
+        </p>
+        </button>
+        <button class=progress-button>
+        <p class="heading-tertiary">
+          <%= link_to "see challenge", challenge_path(tracker.challenge) %>
         </p>
         </button>
       </div>
