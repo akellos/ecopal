@@ -74,6 +74,7 @@
 
   background-size: cover;
   background-position: center;
+  position: relative;
   height: 230px;
   width: 230px;
   display: flex;
@@ -95,10 +96,27 @@
     }
 
   span {
-    font-size: 18px;
+    font-size: 16px;
     margin-top: 16px;
+    position: absolute;
+    top: 178px;
   }
 }
+
+.feature {
+  height: 100%;
+  padding-top: 10px;
+  position: absolute;
+}
+
+.ribbon {
+  height: 115%;
+  padding-top: 10px;
+  position: absolute;
+  top: 80px;
+}
+
+
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
