@@ -62,7 +62,7 @@
     text-align: center;
     border-radius: 3px;
     box-shadow: 0 1.5rem 4rem rgba(black, .15);
-    height: 280px;
+    height: 334px;
     width: 426px;
     transition: 0.5s;
     margin: 18px;
@@ -138,9 +138,10 @@
 .edit-profile-text {
   text-align: center;
   font-size: 1rem;
+  color: rgb(111, 196, 169);
 }
 
-.badge-text {
+.badge-text{
   color: #808080;
   font-size: 1.3rem;
 }
