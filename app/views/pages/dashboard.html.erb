@@ -56,6 +56,7 @@
           <div class="top-five">
             <h4><%= image_tag "crowns.png" %> Leaderboard</h4>
             <table>
+               <% if policy(@user).edit? %>
               <% @top_five_friends.each do |friend| %>
               <tr>
                 <th class = "avatar"><%= cl_image_tag friend.image %></th>
@@ -63,6 +64,7 @@
                 <th><%= friend.score %></th>
               </tr>
               <% end %>
+               <% end %>
             </table>
           </div>
         </div>
