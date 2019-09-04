@@ -12,6 +12,12 @@
       <% end %>
       <% @trackers.each do |tracker| %>
       <div class="progress-card">
+        <% if tracker.tracker_days.to_a.any? { |day| day.date.to_date <= Date.today && day.completed == false} %>
+          <div class="alarm bell">
+            <%= image_tag "alarm.png", style:"height: 50px; width: 500px" "padding-top: 10px;"%>
+          </div>
+        <% else %>
+        <% end %>
         <div class="challenge-image" style="background-color: <%= tracker.challenge.bg_color %>">
           <% if tracker.challenge.image.nil? || tracker.challenge.image.empty? %>
           <%= cl_image_tag tracker.challenge.photo, alt: tracker.challenge.name, height: 180, width: 180, crop: :fill %>
