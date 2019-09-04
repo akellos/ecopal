@@ -1,8 +1,12 @@
 <div class="form-wrapper-edit-profile" style="background-image: url(<%= image_path "sky.jpg" %>)"></div>
 <br>
-<h2 class="heading-tertiary">Edit my profile</h2>
-<br>
-
+<div class="index-cloud-pal">
+  <div class="inform-pal-edit-profile">
+    <%= image_tag "form.png" %>
+    <div class="bubble-edit-profile" id = "bubble-index">
+      <p>Let's edit your profile</p>
+    </div>
+  </div>
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 <div class="form-container-edit">
