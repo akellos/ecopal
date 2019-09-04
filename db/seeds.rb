@@ -620,7 +620,7 @@ puts "Created basic challenges 'Plastic-free', 'Stay dark' and 'Leave your car a
 @tracker_users = [marco, phelim, lucien, benjamin, arthur, alext, viktor,
  thomas, terri, susan, stanislas, rokas, raquel, paul, nicholas, mohammad, melissa,
  matthew, matt, mark, marc, loki, julien, joe, ghita, george, francesca, evelina, ellen,
- ekrem, dumitru, dima, demi, charles, benoit, ben, andreea, ali, alexandre, alan, ahmad, evia,
+ ekrem, dumitru, dima, demi, charles, benoit, ben, andreea, ali, alexandre, alan, ahmad,
  lila, moritz]
 
 @challenges = [plastic_free, stay_dark, no_car, five_minute_shower, watch_documentary, reusable_bags, no_meat, attend_lecture, clean_neighborhood]
