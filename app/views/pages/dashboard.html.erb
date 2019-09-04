@@ -59,6 +59,7 @@
         <%= image_tag badge.icon, width: 100, height: 100 %>
         <% end %>
       </div>
+      <% if policy(@user).edit? %>
       <div class="profile-card-friends">
         <p class="heading-secondary">
           Friends
@@ -67,7 +68,6 @@
           <div class="top-five">
             <h4><%= image_tag "crowns.png" %> Leaderboard</h4>
             <table>
-               <% if policy(@user).edit? %>
               <% @top_five_friends.each do |friend| %>
               <tr>
                 <th class = "avatar"><%= cl_image_tag friend.image %></th>
