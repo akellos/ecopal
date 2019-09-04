@@ -2,9 +2,12 @@
 
 <div class="challenge-show-page">
     <div class="challenge-show-image" style="background-color: <%= @challenge.bg_color %>">
-        <%= image_tag @challenge.image, height: 300, width: 400, crop: :fill %>
+        <div>
+          <%= image_tag @challenge.image, height: 300, width: 400, crop: :fill %>
+          </div>
     </div>
     <div class="challenge-details">
+        <h2>Why join?</h2>
         <p> <%= @challenge.description %></p>
         <p> Duration: <%= pluralize @challenge.duration, "day" %></p>
         <p> You can earn up to <%= @challenge.reward %> points</p>

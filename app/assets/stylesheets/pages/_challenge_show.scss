@@ -28,13 +28,27 @@
   box-shadow: $box-shadow;
   border-radius: 8px;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  vertical-align: center;
+  align-items: center;
+    img {
+      height: 100%;
+      width: 100%;
+    }
 }
 
 .challenge-details {
-  background-color: hsl(192, 25%, 92%);
+  background-color: hsl(211, 68%, 82%);
   border-radius: 10px;
-  padding: 20px;
+  padding: 35px 45px 35px 45px;
   color: grey;
+  font-size: 18px;
+    h2 {
+      font-family: 'Sniglet', extra-bold;
+      color: hsl(356, 36%, 68%);
+      font-weight: bold;
+  }
 }
 
 .challenge-details p {
@@ -43,7 +57,7 @@
 
 .participants {
   display: flex;
-  background-color: hsl(192, 25%, 92%);
+  background-color: hsl(211, 68%, 82%);
   border-radius: 10px;
   padding: 15px;
   color: grey;
