@@ -1,6 +1,16 @@
 
-<h1 class = "index-page-title">Join a challenge <%= image_tag "pal.png" %> </h1>
-<h3>or click <%= link_to "here", new_challenge_path %> to create your own </h3>
+<h1 class = "index-page-title">Join a challenge </h1>
+
+<div class="index-cloud-pal">
+  <div>
+    <%= image_tag "pal.png" %>
+    </div>
+  <div class="bubble" id = "bubble-index">
+          <p>Or click <%= link_to "here", new_challenge_path %> to create your own</p>
+  </div>
+</div>
+
+
 
 <div class="index-page-flex">
 
@@ -27,9 +37,10 @@
                   <div class="image-container" id = "image-container-flip" style="background-color: <%= challenge.bg_color %>">
                     <div class = "flip-text">
                         <p> <%= challenge.trackers.count %> ecopals are participating in this challenge!</p>
+                        <%= image_tag "ecofriends.png" %>
                       </div>
                   </div>
-                  <div class="image-text">
+                  <div class="image-text" id = "find-out-more">
                       <%= link_to "Find out more!", challenge_path(challenge) %>
                   </div>
                 </div>

@@ -2,15 +2,19 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
-  // grid-row-gap: 140px;
+  grid-row-gap: 60px;
   grid-template-rows: 410px;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 
 .card {
   margin: 10px;
   box-shadow: $box-shadow;
   width: 300px;
+}
+
+.index-cloud-pal {
+  display: flex;
 }
 
 .image-container {
@@ -28,6 +32,16 @@
   width: 125%;
 }
 
+#bubble-index {
+  text-align: center;
+   a {
+     text-decoration: none;
+     color: hsl(161, 42%, 68%);
+   }
+}
+
+
+
 .image-text {
   text-align: center;
   padding: 20px;
@@ -40,20 +54,34 @@
   color: grey;
   font-weight: bold;
 }
-// .image-text a:hover {
-//  color: hsl(162, 44%, 67%);
-// }
+
+#find-out-more a {
+  background-color: rgba(139, 207, 186, 0.4);
+  padding: 10px;
+  border-radius: 7px;
+}
+
+
+
+#find-out-more:hover {
+  transform: scale(1.1);
+}
 
 .index-page-title {
-  padding-top: 35px;
+  padding-top: 10px;
   padding-bottom: 25px;
-  font-size: 45px;
-  color: grey;
+  font-family: 'Sniglet', extra-bold;
+  font-size: 70px;
+  color: white;
   font-weight: bold;
     img {
       margin-left: -55px;
     }
 
+}
+
+.index-page-subtitle {
+  text-align: center;
 }
 
 .index-page-button {
@@ -128,9 +156,17 @@
   transform: rotateY(180deg);
 }
 
+
+.flip-text {
+  img {
+    width: 120px;
+  }
+}
+
 .leaderboard {
   padding-top: 10px;
   padding-left: 20px;
+  width: 220px;
 
   table {
     width: 100%;
@@ -143,10 +179,10 @@
       th {
         width: 100%;
         text-align: left;
-        font-size: 12px;
+        font-size: 14px;
 
         a {
-          color: black;
+          color: #6d6c6c;
         }
 
         img {
@@ -171,6 +207,9 @@
   padding: 16px;
   background-color: white;
   box-shadow: $box-shadow;
+  border-style: solid;
+  border-color: hsl(161, 42%, 68%);
+  border-width: 15px;
 
 }
 
@@ -178,13 +217,13 @@
   padding-bottom: 7px;
   margin-bottom: 16px;
   border-bottom: 1px solid;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: bold;
   color: hsl(50, 100%, 53%);
 
   img {
     margin-right: 10px;
-    height: 15px;
+    height: 16px;
   }
 }
 
