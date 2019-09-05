@@ -24,7 +24,7 @@ class FriendshipsController < ApplicationController
 
       outcome = sender_friendship.save && recipient_friendship.save
     if outcome
-      flash[:notice] = 'You now have a new friend!'
+      flash[:notice] = 'You now have a new friend!!'
     else
       flash[:alert] = 'Something went wrong...'
     end

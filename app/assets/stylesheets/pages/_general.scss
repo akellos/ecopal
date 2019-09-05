@@ -23,6 +23,13 @@ body {
 
 .alert-info {
   z-index: 3000;
+  font-family: 'Sniglet', extra-bold;
+}
+
+.alert {
+  width: 200px;
+  height: 200px;
+  background-color: white;
 }
 
 .navbar {

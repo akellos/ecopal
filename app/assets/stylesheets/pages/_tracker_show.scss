@@ -7,7 +7,6 @@
   border-radius: 10px;
   position: relative;
   text-align: center;
-  text-align: center;
   h2 {
     padding-top: 22px;
     padding-bottom: 30px;
@@ -21,6 +20,20 @@
   display: grid;
   grid-template-columns: 2fr 2fr 2fr;
   grid-gap: 30px;
+}
+
+.tracker-instruction {
+  padding-bottom: 20px;
+    p {
+  color: grey;
+  line-height: 5px;
+  font-family: 'Sniglet', extra-bold;
+  opacity: 0.8;
+     }
+}
+
+.yellow-btn-center {
+  margin: 0 !important;
 }
 
 .days {
