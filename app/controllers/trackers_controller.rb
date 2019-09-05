@@ -24,16 +24,20 @@ class TrackersController < ApplicationController
 
   def update_tracker_days
     @tracker = Tracker.find(params[:id])
-    days = params[:update_tracker_days][:days].select { |date| !date.blank? }
-    tds = TrackerDay.where(date: days, tracker: @tracker)
-    tds.each do |td|
-      td.update(completed: true)
-      old_score = @tracker.user.score
-      new_score = @tracker.user.score + 50
-      @tracker.user.update(score: new_score)
+    if !params[:update_tracker_days].nil?
+      days = params[:update_tracker_days][:days].select { |date| !date.blank? }
+      tds = TrackerDay.where(date: days, tracker: @tracker)
+      tds.each do |td|
+        td.update(completed: true)
+        old_score = @tracker.user.score
+        new_score = @tracker.user.score + 50
+        @tracker.user.update(score: new_score)
+      end
+      redirect_to challenge_tracker_path(@tracker)
+    else
+      redirect_to dashboard_path
     end
     authorize(@tracker)
-    redirect_to challenge_tracker_path(@tracker)
   end
 
   def update
