@@ -60,12 +60,21 @@
           </div>
         </p>
       </div>
-      <div class="profile-card">
-        <p class="heading-secondary">Achievements</p>
-        <p class="badge-text"><%= @user.score %> points earned!</p>
-        <div class="badges-inline"> <% @badges.each do |badge| %>
-          <%= image_tag badge.icon, width: 90, height: 90 %>
-          <% end %>
+      <div class="score-board-card">
+        <div class="score-board" style="background-image: url(<%= image_path "score_pal.png" %>)">
+          <div class="score-and-badges">
+            <div class="score-inline">
+              <p class="badge-text"> Score:</p>
+              <p class="score-font"><%= @user.score %></p>
+            </div>
+            <div class="badges-inline">
+              <p class="badge-text"> Badges:</p>
+
+              <% @badges.each do |badge| %>
+                <%= image_tag badge.icon, width: 48, height: 48 %>
+              <% end %>
+            </div>
+          </div>
         </div>
       </div>
       <% if policy(@user).edit? %>
