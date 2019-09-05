@@ -6,4 +6,8 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
 import { initMapbox } from '../plugins/init_mapbox';
 
+import { loadDynamicBannerText } from '../plugins/init_typed';
+
+loadDynamicBannerText();
+
 initMapbox();
