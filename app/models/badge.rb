@@ -2,7 +2,7 @@ class Badge < ApplicationRecord
   has_many :achievements
 
   def self.check(user)
-    if user.score >= 10 && user.score < 30
+    if user.score >= 400 && user.score < 800
       unless user.badges.include? Badge.find(4)
         badge = Badge.find(4)
         achievement = Achievement.new(user: user, badge: badge)
@@ -13,7 +13,7 @@ class Badge < ApplicationRecord
         achievement = Achievement.new(user: user, badge: badge)
         achievement.save
       end
-    elsif user.score >= 30 && user.score < 60
+    elsif user.score >= 800 && user.score < 1600
       unless user.badges.include? Badge.find(4)
         badge = Badge.find(4)
         achievement = Achievement.new(user: user, badge: badge)
@@ -29,7 +29,7 @@ class Badge < ApplicationRecord
         achievement = Achievement.new(user: user, badge: badge)
         achievement.save
       end
-    elsif user.score >= 60
+    elsif user.score >= 1600
       unless user.badges.include? Badge.find(4)
         badge = Badge.find(4)
         achievement = Achievement.new(user: user, badge: badge)
