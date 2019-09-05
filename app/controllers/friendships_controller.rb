@@ -29,7 +29,7 @@ class FriendshipsController < ApplicationController
       flash[:alert] = 'Something went wrong...'
     end
 
-    redirect_to dashboard_path
+   # redirect_to dashboard_path (remove comment if you want to redirect back to your dashboard)
   end
 
   def destroy
