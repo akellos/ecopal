@@ -1,12 +1,10 @@
-
   <div class="background" style="background-image: url(<%= image_path "background_water.png" %>)">
       <div class="banner">
         <div class="pal pal-landing" style="background-image: url(<%= image_path "pal.png" %>)">
         </div>
         <div class="bubble bubble-landing at-item">
            <span id="banner-typed-text">
-          <p>Hi there!</p>
-          <p>Please scroll down... or <a href="#hello" id="scroll-home">click this</a></p>
+          <p>Hey! please scroll down... or <a href="#hello" id="scroll-home">click this</a> to start your eco journey!</p>
             </span>
         </div>
         <div id="clouds">
@@ -30,7 +28,6 @@
 
     <div class="about" id = "about-section">
 
-
       <div id="cards-home" class="about-cards">
         <div class="card-category" style="margin: 50px;">
           <%= image_tag "world.png", class: 'feature' %>
@@ -51,9 +48,12 @@
     </div>
   </div>
 
+
   <!-- <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script> -->
+
 
 <!--   <script>
     var scroll = new SmoothScroll('a[href*="#"]');
+  </script>
   </script> -->
 <%= javascript_pack_tag "pal" %>
