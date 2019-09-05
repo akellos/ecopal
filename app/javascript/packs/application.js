@@ -6,8 +6,32 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
 import { initMapbox } from '../plugins/init_mapbox';
 
-import { loadDynamicBannerText } from '../plugins/init_typed';
-
-loadDynamicBannerText();
-
 initMapbox();
+
+
+$('#scroll-home').on('click', function(e) {
+  e.preventDefault()
+
+  $('html, body').animate(
+    {
+      scrollTop: $('#hello').offset().top,
+    },
+    1000,
+    'linear'
+  )
+})
+
+$('#about-landing').on('click', function(e) {
+  e.preventDefault()
+
+  $('html, body').animate(
+    {
+      scrollTop: $('#about-section').offset().top,
+    },
+    1000,
+    'linear'
+  )
+})
+
+
+

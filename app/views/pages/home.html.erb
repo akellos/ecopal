@@ -6,7 +6,7 @@
         <div class="bubble bubble-landing at-item">
            <span id="banner-typed-text">
           <p>Hi there!</p>
-          <p>Please scroll down... or <a href="#hello" data-scroll>click this</a></p>
+          <p>Please scroll down... or <a href="#hello" id="scroll-home">click this</a></p>
             </span>
         </div>
         <div id="clouds">
@@ -23,10 +23,15 @@
         <div class="btn-landing">
            <%= link_to "Challenges", challenges_path, class: "grey-btn" %>
            <%= link_to "Dashboard", dashboard_path, class: "grey-btn" %>
-           <a href="#cards-home" class="grey-btn">About</a>
+           <a href="#cards-home" class="grey-btn" id = "about-landing">About</a>
         </div>
     </div>
+
+
+    <div class="about" id = "about-section">
+
     <div class="about">
+
       <div id="cards-home" class="about-cards">
         <div class="card-category" style="margin: 50px;">
           <%= image_tag "world.png", class: 'feature' %>
@@ -47,9 +52,9 @@
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script> -->
 
-  <script>
+<!--   <script>
     var scroll = new SmoothScroll('a[href*="#"]');
-  </script>
+  </script> -->
 <%= javascript_pack_tag "pal" %>
