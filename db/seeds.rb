@@ -437,8 +437,8 @@ thomas = User.create!(
   )
 
 viktor = User.create!(
-  name: "Viktor",
-  email: "viktor@mail.com",
+  name: "Victor",
+  email: "victor@mail.com",
   password: "654321",
   image: "https://avatars1.githubusercontent.com/u/51501259?v=4",
   location: "Buenos Aires",
