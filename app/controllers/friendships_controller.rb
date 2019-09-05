@@ -22,7 +22,9 @@ class FriendshipsController < ApplicationController
       recipient_friendship = Friendship.new(sender: User.find(params[:user]), recipient: User.find(current_user.id), status: "pending")
     end
 
-      outcome = sender_friendship.save && recipient_friendship.save
+
+    outcome = sender_friendship.save && recipient_friendship.save
+
     if outcome
       flash[:notice] = 'You now have a new friend!'
     else
@@ -30,6 +32,8 @@ class FriendshipsController < ApplicationController
     end
 
    # redirect_to dashboard_path (remove comment if you want to redirect back to your dashboard)
+   redirect_back(fallback_location: dashboard_path)
+
   end
 
   def destroy
