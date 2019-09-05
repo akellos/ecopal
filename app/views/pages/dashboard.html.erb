@@ -3,7 +3,7 @@
 <div class="dashboard-container">
   <div class="dashboard-col-challenges">
     <% if !@user.list_friends.map(&:sender).include?(current_user) && @user != current_user %>
-    <%= link_to "add as friend", friendships_path(user: @user), method: :post, class: "btn-dash"  %>
+    <%= link_to "Add as friend", friendships_path(user: @user), method: :post, class: "grey-btn", id: "yellow-btn-dash"  %>
     <% end %>
     <!-- Add this later, removed to fix demo day <%#= cl_image_tag @user.image, %> -->
     <!-- after @user.image, "height: 300, width: 400, crop: :fill" -->
