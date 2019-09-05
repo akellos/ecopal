@@ -21,6 +21,31 @@
   padding: 17px 12px 12px 12px;
   z-index: 2000;
   overflow-y: scroll;
+    a {
+      text-decoration: none;
+    }
+    h2 {
+      font-family: 'Sniglet', extra-bold;
+      font-size: 30px;
+    }
+}
+
+.badges-inline img {
+  padding: 6px;
+}
+
+#btn-dash {
+  background-color: hsl(39, 100%, 76%);
+  padding: 10px;
+  border-radius: 5px;
+  color: hsl(35, 56%, 47%);
+  margin: 10px;
+  a {
+    text-decoration: none;
+  }
+    &:hover {
+      transform: scale(1.1);
+    }
 }
 
 .dashboard-col {
@@ -62,6 +87,13 @@
   align-items: center;
 }
 
+.dashboard-title {
+  color: hsl(0, 87%, 82%);
+  font-family: 'Sniglet', extra-bold;
+  font-size: 70px;
+  font-weight: 800;
+}
+
 .alarm {
   position: absolute;
   top: -5px;
@@ -81,14 +113,28 @@
     margin: 18px;
 }
 
+#profile-card {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+#leaderboard {
+  width: 250px;
+}
+
 .profile-card-friends {
   background-color: #F4F8F9;
     font-size: 1.5rem;
     padding: 1.5rem;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    vertical-align: center;
     border-radius: 3px;
     box-shadow: 0 1.5rem 4rem rgba(black, .15);
-    height: 440px;
     width: 426px;
     transition: 0.5s;
     margin: 18px;
@@ -102,6 +148,7 @@
 .progress-card-status:hover {
   cursor: pointer;
 }
+
 
 .challenge-image {
   width: 375px;
@@ -119,6 +166,8 @@
 .avatar-profile {
   border-radius: 90px;
   z-index: 2000;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .profile-name {
