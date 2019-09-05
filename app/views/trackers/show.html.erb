@@ -1,7 +1,9 @@
 <div class="tracker-card">
-  <div>
+  <div class = "tracker-instruction">
     <% if current_user == @user %>
       <h2> Your "<%= @tracker.challenge.name %>" progress tracker </h2>
+      <p> Did you go through the whole day following the challenge rules?</p>
+      <p> If yes, click on this day to track your progress! </p>
     <% else %>
     <% end %>
   </div>
@@ -49,9 +51,10 @@
               </div>
 
           <% end %>
-
-
-        <%= f.submit 'Save', class: "yellow-btn" %>
+        <br>
+        <p>
+         <%= f.submit 'Save', class: "yellow-btn yellow-btn-center" %>
+       </p>
       </div>
     <% end %>
   </div>
