@@ -43,3 +43,17 @@
     left: 180px;
   }
 }
+
+#log-in-btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  background-color: rgb(234, 112, 112);
+  border-color: rgb(234, 112, 112);
+}
+
+#log-in-btn:hover {
+  text-decoration: none;
+  background-color: rgb(234, 130, 112);
+}
