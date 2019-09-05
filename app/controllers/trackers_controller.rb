@@ -11,7 +11,7 @@ class TrackersController < ApplicationController
     # @tracker.time = (Date.today..(Date.today + @challenge.duration)).to_a.map(&:to_s)
     # @tracker.pending = @tracker.time
     if @tracker.save
-      (Date.today..(Date.today + @challenge.duration)).to_a.each do |date|
+      (Date.today..(Date.today + @challenge.duration - 1)).to_a.each do |date|
         td = TrackerDay.create(tracker: @tracker, date: date.to_s)
       end
       # raise
