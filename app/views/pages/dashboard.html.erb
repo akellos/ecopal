@@ -2,9 +2,8 @@
 <div class="form-wrapper-dashboard" style="background-image: url(<%= image_path "sky.jpg" %>)"></div>
 <div class="dashboard-container">
   <div class="dashboard-col-challenges">
-    <h2 class="heading-secondary"><%= @user.name %>'s challenges</h2>
     <% if !@user.list_friends.map(&:sender).include?(current_user) && @user != current_user %>
-    <%= link_to "add as friend", friendships_path(user: @user), method: :post, id: "btn-dash"  %>
+    <%= link_to "add as friend", friendships_path(user: @user), method: :post, class: "btn-dash"  %>
     <% end %>
     <!-- Add this later, removed to fix demo day <%#= cl_image_tag @user.image, %> -->
     <!-- after @user.image, "height: 300, width: 400, crop: :fill" -->
@@ -26,7 +25,7 @@
           <%= image_tag tracker.challenge.image %>
           <% end %>
         </div>
-        <h3 class="heading-tertiary">
+        <h3 class="heading-tertiary-2">
         <%= tracker.challenge.name %>
         </h3>
 
@@ -61,8 +60,9 @@
           </div>
         </p>
       </div>
-      <div class="profile-card" id="profile-card-badges">
-        <p class="heading-secondary">Points & Badges</p>
+
+      <div class="profile-card">
+        <p class="heading-secondary">Achievements</p>
         <p class="badge-text"><%= @user.score %> points earned!</p>
         <div class="badges-inline"> <% @badges.each do |badge| %>
           <%= image_tag badge.icon, width: 90, height: 90 %>
