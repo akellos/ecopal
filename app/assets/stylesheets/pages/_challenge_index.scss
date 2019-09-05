@@ -35,6 +35,8 @@
 
 #bubble-index {
   text-align: center;
+  font-family: 'Sniglet', extra-bold;
+  font-size: 20px;
    a {
      text-decoration: none;
      color: hsl(161, 42%, 68%);
@@ -208,9 +210,7 @@
   padding: 16px;
   background-color: white;
   box-shadow: $box-shadow;
-  border-style: solid;
   border-color: hsl(161, 42%, 68%);
-  border-width: 15px;
 
 }
 
@@ -228,6 +228,12 @@
   }
 }
 
+#yellow-btn-index {
+  width: 150px !important;
+  margin-top: 0 !important;
+  padding-bottom: 4px !important;
+  padding-top: 4px !important;
+}
 
 .index-page-flex {
   display: flex;
