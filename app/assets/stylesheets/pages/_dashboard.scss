@@ -123,6 +123,54 @@
     margin: 18px;
 }
 
+.score-board-card {
+  background-color: #F4F8F9;
+  display: flex;
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(black, .15);
+    height: 520px;
+    width: 426px;
+    transition: 0.5s;
+    margin: 18px;
+}
+
+.score-board-card p {
+  margin: 8px;
+}
+
+
+.score-board {
+  width: 400px;
+  height: 500px;
+
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  position: relative;
+
+}
+
+.score-and-badges {
+  position: absolute;
+  left: 50px;
+  bottom: 100px;
+  padding-top: 24px;
+}
+
+.score-inline {
+  display: flex;
+  padding: 8px;
+}
+
+.badges-inline {
+  display: flex;
+  padding: 8px;
+}
+
 #profile-card {
    display: flex;
    flex-direction: column;
@@ -222,10 +270,14 @@
 }
 
 .badge-text{
-  color: #ed8083;
-  font-size: 30px;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  color: #929393;
+  font-size: 24px;
+}
+
+.score-font{
+  font-family: 'Alfa Slab One';
+  color: #FB7261;
+  font-size: 24px;
 }
 
 .bell{
