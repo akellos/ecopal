@@ -627,6 +627,11 @@ puts "Created basic challenges 'Plastic-free', 'Stay dark' and 'Leave your car a
 
 @challenges = [plastic_free, stay_dark, no_car, five_minute_shower, watch_documentary, reusable_bags, attend_lecture, clean_neighborhood]
 
+@some_london_users.each do |user|
+  Tracker.create!(user: user, challenge: no_meat)
+end
+
+
 no_meat
 
 @tracker_users.each do |user|
