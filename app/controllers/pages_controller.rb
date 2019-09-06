@@ -12,7 +12,7 @@ class PagesController < ApplicationController
       @user = current_user
     end
     @user_badge = Badge.check(@user)
-    @badges = @user.badges
+    @badges = @user.badges.first(3)
     @trackers = @user.trackers
     @friendships = Friendship.where(sender: current_user)
     @friends = @friendships.map(&:recipient) << current_user
