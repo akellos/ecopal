@@ -623,7 +623,11 @@ puts "Created basic challenges 'Plastic-free', 'Stay dark' and 'Leave your car a
  ekrem, dumitru, dima, demi, charles, benoit, ben, andreea, ali, alexandre, alan, ahmad,
  lila, moritz]
 
-@challenges = [plastic_free, stay_dark, no_car, five_minute_shower, watch_documentary, reusable_bags, no_meat, attend_lecture, clean_neighborhood]
+@some_london_users = [lila, ahmad, alan, ali, ben, demi, ellen, matt, alext, arthur, phelim, lucien, benjamin, moritz, alexandre, benoit, charles, dima]
+
+@challenges = [plastic_free, stay_dark, no_car, five_minute_shower, watch_documentary, reusable_bags, attend_lecture, clean_neighborhood]
+
+no_meat
 
 @tracker_users.each do |user|
   @some_challenges = @challenges.sample(4)
