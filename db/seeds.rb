@@ -76,7 +76,7 @@ evia = User.create!(
   password: "654321",
   image: "https://avatars0.githubusercontent.com/u/51849597?v=4",
   location: "London",
-  score: 500,
+  score: 100,
   bio: "Hi everyone! I am on the exciting journey to save the planet. Add me to your friends' list, and let's see who will get more points!"
 )
 
