@@ -24,6 +24,7 @@ class TrackersController < ApplicationController
 
   def update_tracker_days
     @tracker = Tracker.find(params[:id])
+    badges_count = current_user.badges.count
     if !params[:update_tracker_days].nil?
       days = params[:update_tracker_days][:days].select { |date| !date.blank? }
       tds = TrackerDay.where(date: days, tracker: @tracker)
@@ -32,6 +33,13 @@ class TrackersController < ApplicationController
         old_score = @tracker.user.score
         new_score = @tracker.user.score + 50
         @tracker.user.update(score: new_score)
+      end
+
+      # Badge.check(current_user)
+      updated_badges_count = current_user.badges.count
+
+      if updated_badges_count > badges_count
+        flash[:notice] = "You received a new badge!"
       end
       redirect_to challenge_tracker_path(@tracker)
     else
