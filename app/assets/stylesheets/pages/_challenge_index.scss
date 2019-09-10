@@ -279,12 +279,19 @@
 
 
 
-
 // Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
+@media (min-width: 100px) and (max-width: 414px) {
   .cards {
     grid-template-columns: 1fr;
   }
+  .leaderboard {
+    display: none;
+  }
+
+  .index-page-title {
+    font-size: 34px;
+  }
+
 }
 
 // Small devices (landscape phones, 576px and up)
@@ -296,6 +303,10 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+  .leaderboard {
+    display: none;
+  }
+
   .cards {
     grid-template-columns: 1fr 1fr;
   }
