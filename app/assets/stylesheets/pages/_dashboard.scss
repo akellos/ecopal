@@ -289,6 +289,36 @@
   transform-origin: 50% 4px;
 }
 
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .dashboard-container {
+    grid-template-columns: 1fr;
+  }
+  .dashboard-title {
+    font-size: 35px;
+  }
+}
+
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .dashboard-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .dashboard-title {
+    font-size: 35px;
+  }
+  .dashboard-col {
+    width: 365px;
+  }
+  .dashboard-col-challenges {
+    width: 365px;
+  }
+}
+
+
+
 @-webkit-keyframes ring {
   0% { -webkit-transform: rotateZ(0); }
   1% { -webkit-transform: rotateZ(30deg); }
