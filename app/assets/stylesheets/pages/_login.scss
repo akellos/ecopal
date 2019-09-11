@@ -57,3 +57,42 @@
   text-decoration: none;
   background-color: rgb(234, 130, 112);
 }
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .bubble {
+    display: none;
+  }
+  .inform-pal {
+    display: none;
+  }
+
+  .form {
+    width: 543px;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .form-inputs-signup {
+    width: 203px;
+  }
+
+  .form-signup {
+    width: 218px;
+  }
+
+  .form-container-signup {
+    width: 650px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .form {
+    width: 399px;
+  }
+  .inform-pal .bubble {
+    top: 6px;
+  }
+}
+
