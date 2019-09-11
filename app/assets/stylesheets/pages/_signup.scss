@@ -41,3 +41,49 @@
     position: absolute;
     filter: blur(4px);
 }
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .bubble {
+    display: none;
+  }
+  .inform-pal {
+    display: none;
+  }
+
+  .form {
+    width: 543px;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .form-inputs-signup {
+    width: 203px;
+  }
+
+  .form-signup {
+    width: 218px;
+  }
+
+  .form-container-signup {
+    width: 298px;
+    padding-top: 46px;
+    padding-bottom: 25px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+   .bubble {
+    display: none;
+  }
+  .inform-pal {
+    display: none;
+  }
+
+  .form-container-signup {
+    width: 887px;
+    height: 559px;
+  }
+}
+
+
