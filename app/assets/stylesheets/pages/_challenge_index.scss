@@ -303,10 +303,6 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
-  .leaderboard {
-    display: none;
-  }
-
   .cards {
     grid-template-columns: 1fr 1fr;
   }
