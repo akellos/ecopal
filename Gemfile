@@ -22,7 +22,7 @@ gem 'webpacker'
 gem 'faker'
 gem 'date'
 gem 'cloudinary', '~> 1.9.1'
-gem 'carrierwave', '~> 1.2'
+gem 'carrierwave', '~> 1.3'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
